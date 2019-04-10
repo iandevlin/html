@@ -150,7 +150,7 @@
   in user agents. At time of publication of this document, patches from the
   <a>WHATWG HTML specification</a> have been merged until January 12, 2016. The W3C HTML editors
   have also added patches that resulted from discussions and decisions made by the W3C Web Platform
-  WG as well a bug fixes from bugs not shared by the WHATWG.
+  WG as well as bug fixes from bugs not shared by the WHATWG.
 
   A separate document is published to document the differences between the HTML specified in this
   document and the language described in the HTML 4.01 specification. [[HTML5-DIFF]]
@@ -347,7 +347,7 @@
 
     <pre class="idl-ignore def" data-no-idl data-highlight="webidl">
       interface Example {
-          // this is an IDL definition
+        // this is an IDL definition
       };
     </pre>
 
@@ -393,42 +393,31 @@
 
   Some features of HTML trade user convenience for a measure of user privacy.
 
-  In general, due to the Internet's architecture, a user can be distinguished from another by the
-  user's IP address. IP addresses do not perfectly match to a user; as a user moves from device to
-  device, or from network to network, their IP address will change; similarly, NAT routing, proxy
-  servers, and shared computers enable packets that appear to all come from a single IP address to
-  actually map to multiple users. Technologies such as onion routing can be used to further
-  anonymize requests so that requests from a single user at one node on the Internet appear to come
-  from many disparate parts of the network.
+  Various mechanisms can be used to identify a particular user. Cookies, for example,
+  are designed specifically to enable this. Cookies are widely used to help users,
+  for example logging into a site automatically, or storing customisation preferences
+  so the site is more accessible to the user.
 
-  However, the IP address used for a user's requests is not the only mechanism by which a user's
-  requests could be related to each other. Cookies, for example, are designed specifically to
-  enable this, and are the basis of most of the Web's session features that enable you to log into
-  a site with which you have an account.
+  There are other mechanisms that are more subtle. Collecting enough information means
+  an individual user's browser's "digital fingerprint" can be computed,
+  identifying the user without their knowledge or consent.
 
-  There are other mechanisms that are more subtle. Certain characteristics of a user's system can
-  be used to distinguish groups of users from each other; by collecting enough such information,
-  an individual user's browser's "digital fingerprint" can be computed, which can be as good, if
-  not better, as an IP address in ascertaining which requests are from the same user.
+  This "fingerprinting", can be used for both positive and malevolent purposes.
+  An example of a reasonably benign purpose would be determining whether a particular user
+  prefers larger text, and automatically providing larger fonts in subsequent
+  visits to participating sites.
 
-  Grouping requests in this manner, especially across multiple sites, can be used for both benign
-  (and even arguably positive) purposes, as well as for malevolent purposes. An example of a
-  reasonably benign purpose would be determining whether a particular person seems to prefer sites
-  with dog illustrations as opposed to sites with cat illustrations (based on how often they visit
-  the sites in question) and then automatically using the preferred illustrations on subsequent
-  visits to participating sites. Malevolent purposes, however, could include governments combining
-  information such as the person's home address (determined from the addresses they use when
-  getting driving directions on one site) with their apparent political affiliations (determined
-  by examining the forum sites that they participate in) to determine whether the person should be
-  prevented from voting in an election.
+  Other uses could include combining information such as the person's home address
+  (determined from the addresses they use when getting driving directions on one site)
+  with their apparent political affiliations (determined by examining forum sites they visit)
+  to prevent them from voting in an election, or examining the sites they visit,
+  drawing conclusions about health issues they may suffer,
+  and targeting them with advertising for products that misleadingly claim to solve such issues.
 
-  Since the malevolent purposes can be remarkably evil, user agent implementors are encouraged to
-  consider how to provide their users with tools to minimize leaking information that could be used
-  to fingerprint a user.
+  Since the consequences can be very significant, user agent implementors are encouraged to
+  consider how to help users minimize leaking information unknowingly.
 
-  Unfortunately, as the first paragraph in this section implies, sometimes there is great benefit
-  to be derived from exposing the very information that can also be used for fingerprinting
-  purposes, so it's not as easy as simply blocking all possible leaks. For instance, the ability to
+  This is not as easy as simply blocking all possible leaks. For instance, the ability to
   log into a site to post under a specific identity requires that the user's requests be
   identifiable as all being from the same user. More subtly, though, information such as how wide
   text is, which is necessary for many effects that involve drawing text onto a canvas (e.g., any
@@ -440,14 +429,18 @@
   <dfn id="fingerprinting-vector" lt="for privacy">used to fingerprint the user</dfn> are marked as
   this paragraph is. <a class="fingerprint" href="#fingerprinting-vector"><img height="21" src="images/fingerprint.png" width="15" alt="(This is a fingerprinting vector.)" /></a>
 
-  Other features in the platform can be used for the same purpose, though, including, though not
+  Other features in the platform can be used identify users, including but not
   limited to:
 
   * The exact list of which features a user agents supports.
   * The maximum allowed stack depth for recursion in script.
   * Features that describe the user's environment, like Media Queries and the {{Screen}}
     object. [[!MEDIAQ]] [[!CSSOM-VIEW]]
+  * Features that can be used to identify a user in a physical location, e.g. by playing
+    audio through their device, which can be picked up by an external sensor.
   * The user's time zone.
+
+  Note that features which identify a user's location have potentially catastrophic consequences.
 
 <h3 id="a-quick-introduction-to-html">A quick introduction to HTML</h3>
 
@@ -456,17 +449,22 @@
   A basic HTML document looks like this:
 
   <xmp id="intro-early-example" highlight="html">
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Sample page</title>
-      </head>
-      <body>
-        <h1>Sample page</h1>
-        <p>This is a <a href="demo.html">simple</a> sample.</p>
-        <!-- this is a comment -->
-      </body>
-    </html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Document title</title>
+    </head>
+    <body>
+      <h1>Document heading</h1>
+      <p>This is a paragraph of text.</p>
+      <p>
+        <a href="another-html-document.html">
+          Link text for a link to another-html-document.html
+        </a>
+      </p>
+      <!-- this is a comment -->
+    </body>
+  </html>
   </xmp>
 
   HTML documents consist of a tree of elements and text. Each element is denoted in the source by
@@ -479,10 +477,15 @@
 
   <xmp class="bad" highlight="html">
     <!-- incorrect tag nesting -->
-    <p>This is <em>very <strong>wrong</em>!</strong></p>
+    <h1>
+      <a href="this-html-document.html">Document heading that is a link to this document
+    </h1>
+      </a>
 
     <!-- appropriate tag nesting -->
-    <p>This <em>is <strong>correct</strong>.</em></p>
+    <h1>
+      <a href="this-html-document.html">Document heading that is a link to this document</a>
+    </h1>
   </xmp>
 
   This specification defines a set of elements that can be used in HTML, along with rules about the
@@ -491,7 +494,7 @@
   Elements can have attributes, which control how the elements work. In the example below, there
   is a <a>hyperlink</a>, formed using the <{a}> element and its <{links/href}> attribute:
 
-  <xmp highlight="html"><a href="demo.html">simple</a></xmp>
+  <xmp highlight="html"><a href="demo.html">demo link</a></xmp>
 
   <a lt="attribute">Attributes</a> are placed inside the start tag, and consist of a
   <a lt="attribute names">name</a> and a <a lt="attribute values">value</a>, separated by an
@@ -504,12 +507,12 @@
   <xmp highlight="html">
     <!-- empty attributes -->
     <input name=address disabled>
-    <input name=address disabled="">
+    <input name="address" disabled="">
 
     <!-- attributes with a value -->
     <input name=address maxlength=200>
-    <input name=address maxlength='200'>
-    <input name=address maxlength="200">
+    <input name='address' maxlength='200'>
+    <input name="address" maxlength="200">
   </xmp>
 
   HTML user agents (e.g., Web browsers) then <a>parse</a> this markup, turning it into a DOM
@@ -533,7 +536,7 @@
             <li class="t1">
               <{title}>
               <ul>
-                <li class="t3"><code>#text</code>: <span>Sample page</span></li>
+                <li class="t3"><code>#text</code>: <span>Document title</span></li>
               </ul>
             </li>
             <li class="t3"><code>#text</code>: <span>⏎␣</span></li>
@@ -547,21 +550,28 @@
             <li class="t1">
               <{h1}>
               <ul>
-                <li class="t3"><code>#text</code>: <span>Sample page</span></li>
+                <li class="t3"><code>#text</code>: <span>Document heading</span></li>
               </ul>
             </li>
             <li class="t3"><code>#text</code>: <span>⏎␣␣</span></li>
             <li class="t1">
               <{p}>
               <ul>
-                <li class="t3"><code>#text</code>: <span>This is a</span></li>
+                <li class="t3"><code>#text</code>: <span>This is a paragraph of text.</span></li>
+              </ul>
+            </li>
+            <li class="t3"><code>#text</code>: <span>⏎␣␣</span></li>
+            <li class="t1">
+              <{p}>
+              <ul>
+                <li class="t3"><code>#text</code>: <span>⏎␣␣</span></li>
                 <li class="t1">
-                  <{a}> <span class="t2"><{links/href}>="<code>demo.html</code>"</span>
+                  <{a}> <span class="t2"><{links/href}>="<code>another-html-document.html</code>"</span>
                   <ul>
-                    <li class="t3"><code>#text</code>: <span>simple</span></li>
+                    <li class="t3"><code>#text</code>: <span>Link text for a link to another-html-document.html</span></li>
                   </ul>
                 </li>
-                <li class="t3"><code>#text</code>: <span> sample.</span></li>
+                <li class="t3"><code>#text</code>: <span>⏎␣␣</span></li>
               </ul>
             </li>
             <li class="t3"><code>#text</code>: <span>⏎␣␣</span></li>
@@ -585,7 +595,7 @@
   the <{body}> end tag ends up placed at the end of the <{body}>.
 
   The <{head}> element contains a <{title}> element, which itself contains a {{Text}} node with
-  the text "Sample page". Similarly, the <{body}> element contains an <{h1}> element, a <{p}>
+  the text "Document title". Similarly, the <{body}> element contains an <{h1}> element, a <{p}>
   element, and a comment.
 
   <hr>
@@ -627,23 +637,23 @@
 
   In the following example, the page has been made yellow-on-blue using CSS.
 
-  <xmp highlight="html">
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Sample styled page</title>
-        <style>
-          body {
-            background: blue;
-            color: yellow;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Sample styled page</h1>
-        <p>This page is just a demo.</p>
-      </body>
-    </html>
+  <xmp id="intro-early-example" highlight="html">
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Document title</title>
+      <style>
+        body {
+          background: blue;
+          color: yellow;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Styled page</h1>
+      <p>The document has yellow text and a blue background.</p>
+    </body>
+  </html>
   </xmp>
 
   For more details on how to use HTML, authors are encouraged to consult tutorials and guides. Some
@@ -663,12 +673,11 @@
   strongly encouraged to study the matter in more detail. However, this section attempts to provide
   a quick introduction to some common pitfalls in HTML application development.
 
-  The security model of the Web is based on the concept of "origins", and correspondingly many of
-  the potential attacks on the Web involve cross-origin actions. [[!ORIGIN]]
+  One fundamental pillar of the security model that protects Web users is the concept of
+  "origins". Many potential attacks on the Web involve cross-origin actions. [[!ORIGIN]]
 
   : Not validating user input
   : Cross-site scripting (XSS)
-  : SQL injection
   :: When accepting untrusted input, e.g., user-generated content such as text comments, values
       in URL parameters, messages from third-party sites, etc, it is imperative that the data
       be validated before use, and properly escaped when displayed. Failing to do this can
@@ -732,8 +741,8 @@
 
       This problem exists because HTML forms can be submitted to other origins.
 
-      Sites can prevent such attacks by populating forms with user-specific hidden tokens, or by
-      checking <code>Origin</code> headers on all requests.
+      Sites can prevent such attacks by populating forms with user-specific tokens that are
+      not predictable.
   : Clickjacking
   :: A page that provides users with an interface to perform actions that the user might not
       wish to perform needs to be designed so as to avoid the possibility that users can be
@@ -745,9 +754,19 @@
       the <{iframe}> under the mouse cursor just as the user is about to click, thus tricking the
       user into clicking the victim site's interface.
 
-      To avoid this, sites that do not expect to be used in frames are encouraged to only enable
-      their interface if they detect that they are not in a frame (e.g., by comparing the
-      {{window}} object to the value of the {{Window/top}} attribute).
+      To avoid this, sites that do not expect to be used in frames are encouraged to restrict
+      their usage within frames with a mechanism such as Content Security Policy's
+      <a>frame-ancestors directive</a> [[CSP3]], or the HTTP "<code>x-frame-options</code>" header
+      defined in [[rfc7034]].
+
+  A different method of compromising the user's security involves interacting with their
+  physical environment. For example, the <{audio}> element could be used to play audio
+  that interacts with a user's speech enabled devices.
+
+  This could be done in such a way that the user is unaware that it is happening, as in the
+  <a>dolphin attack</a>. Alternatively, malicious content might target users suspected to have
+  a limited hearing range or to be relying on an audio interface such as a screen reader,
+  as determined by <a>fingerprinting</a> users.
 
 <h4 id="common-pitfalls-to-avoid-when-using-the-scripting-apis">
   Common pitfalls to avoid when using the scripting APIs
@@ -1015,8 +1034,8 @@
         For example, the parsing of certain named character references in attributes happens even
         with the closing semicolon being omitted. It is safe to include an ampersand followed by
         letters that do not form a named character reference, but if the letters are changed to a
-        string that <em>does</em> form a named character reference, they will be interpreted as that
-        character instead.
+        string that <em>does</em> form a named character reference, they will be interpreted as
+        that character instead.
 
         In this fragment, the attribute's value is "<code>?bill&amp;ted</code>":
 
@@ -1030,8 +1049,7 @@
         <xmp class="bad" highlight="html"><a href="?art&copy">Art and Copy</a></xmp>
 
         To avoid this problem, all named character references are required to end with a
-        semicolon. Uses of named character references without a semicolon are flagged as
-        errors.
+        semicolon. Uses of named character references without a semicolon are flagged as errors.
 
         The correct way to express the above cases are as follows:
 
@@ -1052,8 +1070,9 @@
       user agents, and are therefore marked as non-conforming to help authors avoid them.
 
       <p class="example">
-        For example, this is why the U+0060 GRAVE ACCENT character (&#x60;) is not allowed in unquoted
-        attributes. In certain legacy user agents, it is sometimes treated as a quote character.
+        For example, this is why the U+0060 GRAVE ACCENT character (&#x60;) is not allowed
+        in unquoted attributes. In certain legacy user agents, it is sometimes treated as
+        a quote character.
       </p>
 
       <p class="example">
@@ -1065,18 +1084,21 @@
   :: Certain restrictions exist purely to avoid known security problems.
 
       <p class="example">
-        For example, the restriction on using UTF-7 exists purely to avoid authors falling prey to a
-        known cross-site-scripting attack using UTF-7. [[RFC2152]]
+        For example, the restriction on using UTF-7 exists purely to avoid authors falling prey
+        to a known cross-site-scripting attack using UTF-7. [[RFC2152]]
       </p>
   : Cases where the author's intent is unclear
-  :: Markup where the author's intent is very unclear is often made non-conforming. Correcting these
-      errors early makes later maintenance easier.
+  :: Markup where the author's intent is very unclear is often made non-conforming.
+      Correcting these errors early makes later maintenance easier.
 
-      <p class="example">
-        For example, it is unclear whether the author intended the following to be an <{h1}> heading
-        or an <{h2}> heading:</p>
+      <div class="example">
+        For example, it is unclear whether the author intended the following to be an
+        <{h1}> heading or an <{h2}> heading:
 
-        <xmp class="bad" highlight="html"><h2>Contact details</h1></xmp>
+        <xmp class="bad" highlight="html">
+          <h2>Contact details</h1>
+        </xmp>
+      </div>
 
   : Cases that are likely to be typos
   :: When a user makes a simple typo, it is helpful if the error can be caught early, as this can
@@ -1085,9 +1107,8 @@
       defined in this specification.
 
       <p class="example">
-        For example, if the author typed <code>&lt;capton></code> instead of
-        <{caption}>, this would be flagged as an error and the author could correct
-        the typo immediately.
+        For example, if the author typed <code>&lt;capton></code> instead of <{caption}>,
+        this  would be flagged as an error and the author could correct the typo immediately.
       </p>
   : Errors that could interfere with new syntax in the future
   :: In order to allow the language syntax to be extended in the future, certain otherwise
@@ -1138,7 +1159,7 @@
 
       <p class="example">
         Another example is the restrictions on the content models of the <{ul}> element, which only
-        allows <{li}> element children. Lists by definition consist just of zero or more list items,
+        allows <{li}> element children. Lists, by definition, consist of zero or more list items,
         so if a <{ul}> element contains something other than an <{li}> element, it's not clear what
         was meant.
       </p>
@@ -1148,21 +1169,61 @@
       lead to confusion. Where these have equivalent alternatives without this problem, the
       confusing combinations are disallowed.
 
-      <p class="example">
+      <div class="example">
         For example, <{div}> elements are rendered as <a>block boxes</a>, and <{span}> elements as
-        <a>inline boxes</a>. Putting a <a>block box</a> in an inline box is unnecessarily confusing;
-        since either nesting just <{div}> elements, or nesting just <{span}> elements, or nesting
-        <{span}> elements inside <{div}> elements all serve the same purpose as nesting a <{div}>
-        element in a <{span}> element, but only the latter involves a <a>block box</a> in an
-        <a>inline box</a>, the latter combination is disallowed.
-      </p>
+        <a>inline boxes</a>. Putting a <a>block box</a> in an inline box is unnecessarily
+        confusing; since either nesting just <{div}> elements, or nesting just <{span}> elements,
+        or nesting <{span}> elements inside <{div}> elements all serve the same purpose as nesting
+        a <{div}> element in a <{span}> element, but only the latter involves a <a>block box</a>
+        in an <a>inline box</a>, the latter combination is disallowed.
 
-      <p class="example">
-        Another example would be the way <a>interactive content</a> cannot be nested. For example, a
-        <{button}> element cannot contain a <{textarea}> element. This is because the default
-        behavior of such nesting interactive elements would be highly confusing to users. Instead of
-        nesting these elements, they can be placed side by side.
-      </p>
+        <p class="note">
+          Some <a>transparent</a> elements, such as <{a}>, <{del}>, and <{ins}>, are
+          <a>inline box</a> elements, but allow for nesting of <a>block box</a> elements.
+        </p>
+
+        <xmp highlight="html">
+          <a href="https://example.com">
+            <h2>An interesting news story</h2>
+            <p>You're going to want to read this...</p>
+          </a>
+
+          <ins>
+            <p>My new paragraph.</p>
+          </ins>
+
+          <del>
+            <ul>
+              <li>My old list.</li>
+            </ul>
+          </del>
+        </xmp>
+
+        The above shows how <{a}>, <{ins}>, and <{del}> elements may contain <a>block box</a>
+        elements. For additional examples and information, review these elements and other
+        <a>transparent</a> elements.
+      </div>
+
+      <div class="example">
+        Another example would be the way <a>interactive content</a> cannot be nested. For example,
+        a <{button}> element cannot contain a descendant <{textarea}> element. This is because the
+        default behavior of nesting interactive elements would be highly confusing to users.
+        Rather than nesting these elements, they could instead be styled with CSS to be visually
+        placed side by side.
+
+        <xmp highlight="html">
+          <!-- Invalid -->
+          <button type="submit">
+            <textarea>Confused?</textarea>
+          </button>
+
+          <!-- Valid -->
+          <textarea>Type Here</textarea>
+          <button type="submit">
+            Submit Here
+          </button>
+        </xmp>
+      </div>
 
   : Errors that indicate a likely misunderstanding of the specification
   :: Sometimes, something is disallowed because allowing it would likely cause author confusion.
@@ -1170,8 +1231,8 @@
       <p class="example">
         For example, setting the <{disabledformelements/disabled}> attribute to the value
         "<code>false</code>" is disallowed, because despite the appearance of meaning that the
-        element is enabled, it in fact means that the element is <em>disabled</em> (what matters for
-        implementations is the presence of the attribute, not its value).
+        element is enabled, it in fact means that the element is <em>disabled</em> (what matters
+        for implementations is the presence of the attribute, not its value).
       </p>
 
   : Errors involving limits that have been imposed merely to simplify the language
@@ -1181,9 +1242,9 @@
         For example, the <{area}> element's <{area/shape}> attribute, despite accepting both
         "<a attr-value for="area/shape"><code>circ</code></a>" and
         "<a attr-value for="area/shape"><code>circle</code></a>" values in practice as synonyms,
-        disallows the use of the "<a attr-value for="area/shape"><code>circ</code></a>" value, so as
-        to simplify tutorials and other learning aids. There would be no benefit to allowing both,
-        but it would cause extra confusion when teaching the language.
+        disallows the use of the "<a attr-value for="area/shape"><code>circ</code></a>" value, so
+        as to simplify tutorials and other learning aids. There would be no benefit to allowing
+        both, and it would cause extra confusion when teaching the language.
       </p>
 
   : Errors that involve peculiarities of the parser
@@ -1225,9 +1286,9 @@
       <p class="example">
         For example, a <{script}> element's <{script/src}> attribute causes the element's contents
         to be ignored. However, this isn't obvious, especially if the element's contents appear to
-        be executable script — which can lead to authors spending a lot of time trying to
-        debug the inline script without realizing that it is not executing. To reduce this problem,
-        this specification makes it non-conforming to have executable script in a <{script}> element
+        be executable script — which can lead to authors spending a lot of time trying to debug
+        the inline script without realizing that it is not executing. To reduce this problem, this
+        specification makes it non-conforming to have executable script in a <{script}> element
         when the <{script/src}> attribute is present. This means that authors who are validating
         their documents are less likely to waste time with this kind of mistake.
       </p>
@@ -1235,10 +1296,9 @@
   : Errors that involve areas that affect authors migrating to and from XHTML
   :: Some authors like to write files that can be interpreted as both XML and HTML with similar
       results. Though this practice is discouraged in general due to the myriad of subtle
-      complications involved (especially when involving scripting, styling, or any kind of automated
-      serialization), this specification has a few restrictions intended to at least somewhat
-      mitigate the difficulties. This makes it easier for authors to use this as a transitionary
-      step when migrating between HTML and XHTML.
+      complications involved (especially when involving scripting, styling, or any kind of
+      automated serialization), this specification has a few restrictions intended to at least somewhat mitigate the difficulties. This makes it easier for authors to use this as a
+      transitionary step when migrating between HTML and XHTML.
 
       <p class="example">
         For example, there are somewhat complicated rules surrounding the <{global/lang}> and
@@ -1297,14 +1357,22 @@
         provides specific recommendations to reduce the risk of problems.
       </blockquote>
 
-  : <cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite> [[WCAG20]]
+  : <cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite> [[WCAG21]]
   :: <blockquote>
-        Web Content Accessibility Guidelines (WCAG) 2.0 covers a wide range of recommendations for
-        making Web content more accessible. Following these guidelines will make content accessible
-        to a wider range of people with disabilities, including blindness and low vision, deafness
-        and hearing loss, learning disabilities, cognitive limitations, limited movement, speech
-        disabilities, photosensitivity and combinations of these. Following these guidelines will
-        also often make your Web content more usable to users in general.
+        Web Content Accessibility Guidelines (WCAG) 2.1 covers a wide range of recommendations for
+        making Web content more accessible. Following these guidelines will make content more
+        accessible to a wider range of people with disabilities, including blindness and low
+        vision, deafness and hearing loss, limited movement, speech disabilities,
+        photosensitivity, and  combinations of these, and some accommodation for learning
+        disabilities and cognitive limitations; but will not address every user need for people
+        with these disabilities.
+        These guidelines address accessibility of web content on desktops, laptops, tablets, and
+        mobile devices. Following these guidelines will also often make Web content more usable
+        to users in general.
+
+        WCAG 2.1 extends Web Content Accessibility Guidelines 2.0 [[WCAG20]], which was published
+        as a W3C Recommendation December 2008. Content that conforms to WCAG 2.1 also conforms to
+        WCAG 2.0, and therefore to policies that reference WCAG 2.0.
       </blockquote>
 
   : <cite>Authoring Tool Accessibility Guidelines (ATAG) 2.0</cite> [[ATAG20]]
@@ -1330,9 +1398,9 @@
   : <cite>HTML Accessibility APIs Mappings 1.0</cite> [[!html-aam-1.0]]
   :: <blockquote>
         Defines how user agents map HTML 5.1 elements and attributes to platform accessibility APIs.
-        Documenting these mappings promotes interoperable exposure of roles, states, properties, and
-        events implemented by accessibility APIs and helps to ensure that this information appears
-        in a manner consistent with author intent.
+        Documenting these mappings promotes interoperable exposure of roles, states, properties,
+        and events implemented by accessibility APIs and helps to ensure that this information
+        appears in a manner consistent with author intent.
       </blockquote>
 
 </section>

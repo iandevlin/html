@@ -36,33 +36,37 @@
 
   Addison Phillips,
   Adrian Bateman,
-  "adugamayuba", <!-- on github -->
+  "adugamayuba", <!-- https://github.com/adugamayuba -->
   Ajay Data,
   Alex Danilo,
   Alexander Surkov,
   Alex Komoroske,
   Alex Russell,
   Alexandre Borela,
-  Alastair Campbell,
-  Amelia Bellamy-Royds,
+  Alastair Campbell, <!-- https://github.com/alastc -->
+  Amelia Bellamy-Royds, <!-- https://github.com/AmeliaBR -->
   Andrea Rendine,
   Andres Rios,
   Andrew Sullivan,
   Anika Henke,
   Anne-Gaelle Colom,
+  Artur Janc,
   Asmus Freytag,
   Boris Zbarsky,
   Calvin Freitas,
-  Chaals McCathie Nevile,
+  <a href="https://github.com/carolgilabert">Carolina Gomez Gilabert</a>,
+  Carolyn Macleod, <!-- https://github.com/carmacleod -->
+  <a href="https://github.com/chaals">Chaals McCathie Nevile</a>,
   Chris Harvey,
   Chris Rebert,
+  "cinephile85", <!-- https://github.com/cinephile85 -->
   Collin Anderson,
   Dan Beam,
   Daniel Buchner,
   David Hyatt,
   David Singer,
   Darryl Pogue,
-  "Decaid", <!-- on github -->
+  "Decaid", <!-- https://github.com/Decaid -->
   Derek Gray,
   Devarshi Pant,
   Dominic Mazzoni,
@@ -72,60 +76,73 @@
   Don Hollander,
   Dylan Barrel,
   Elliott Sprehn,
-  Eric Bailey,
+  <a href="https://github.com/ericwbailey">Eric Bailey</a>,
+  <a href="https://github.com/ericdunsworth">Eric Dunsworth</a>,
   Erik Arvidsson,
   Fabian Pijcke,
-  freshp86, <!-- on github -->
+  Fantasai,
+  "freshp86", <!-- https://github.com/freshp86 -->
+  <a href="https://github.com/geppy">geppy</a>,
   Hajime Morrita,
   Hayato Ito,
-  Heydon Pickering,
+  Heydon Pickering, <!-- https://github.com/Heydon -->
+  <a href="https://github.com/iandevlin">Ian Devlin</a>,
+  "Isaacrojas0394", <!-- https://github.com/isaacrojas0394 -->
   J.C.Jones,
   James Craig,
   Jan Miksovsky,
   Jimmy Bosse,
-  "Jinjiang 勾三股四", <!-- github -->
+  "Jinjiang 勾三股四", <!-- https://github.com/Jinjiang -->
   Jirka Kosek,
+  Job van Achterberg,
   John Foliot,
   John Klensin,
   John Levine,
   John Luke Bentley,
   Jonas Sicking,
-  Jonathan T Neal,
+  Jonathan T Neal, <!-- https://github.com/jonathantneal -->
   Jothan Frake,
   Justin Falgani,
   田村健人 (TAMURA Kent),
   Koji Ishii,
   Leif Halvard Silli,
-  Léonie Watson,
-  Lea Verou,
+  Léonie Watson, <!-- https://github.com/ljwatson -->
+  Lea Verou, <!-- https://github.com/LeaVerou -->
   Maciej Stachowiak,
+  "maffe", <!-- https://github.com/maffe -->
+  Mallory van Achterberg,
   Marco Zehe,
   Mark Svancarek,
-  Martin Janecke,
+  <a href="https://github.com/prlbr">Martin Janecke</a>,
   Marvin Woo 吴秀诚,
   Matt Falkenhagen,
+  Michael Cooper,
   Mike™ Smith,
   Mike West,
-  "Miketubby", <!-- github -->
+  "Miketubby", <!-- https://github.com/Miketubby -->
   Mounir Manouri,
   "Mr Blacksheep", <!-- on github -->
+  <a href="https://github.com/mtrootyy">mtrootyy</a>,
   Nicholas Stimpson,
+  Nick Schonning,
   Noel Gordon,
   Oliver Byford,
   Olli Pettay,
-  Patrick H. Lauke,
+  Owen Edwards,
+  Patrick H. Lauke, <!-- https://github.com/patrickhlauke -->
   Paul Libbrecht,
-  "paulpalaszewski", <!-- on github -->
+  "paulpalaszewski", <!-- https://github.com/paulpalaszewski -->
   Pavel Dvořák,
   Pedro de Carvalho,
   Philippe Le Hégaret,
   Pierre-Marie Dartus,
-  programmer3000, <!-- on github -->
+  "programmer3000", <!-- https://github.com/programmer3000 -->
   Rafael Weinstein,
   Reinhardt Hierl,
   Richard Gibson,
   Richard Ishida,
   Richard Merdinger,
+  "<a href="https://github.com/rizbizkits">RizBizKits</a>"
   Rob Wormald,
   Roland Steiner,
   Ronald Eddy jr.,
@@ -133,11 +150,14 @@
   Sailesh Panchang,
   Sam Thorogood,
   Scott Miles,
-  "SelenIT", <!-- github -->
+  "SelenIT", <!-- https://github.com/SelenIT -->
   Shawn Steele,
   Stéphane Deschamps,
+  Stephen Checkoway, <!-- https://github.com/stevecheckoway -->
+  Stephen Cunnliffe,
+  Steven Faulkner, <!-- https://github.com/stevefaulkner -->
+  Steve Benoit, <!-- https://github.com/srbenoit -->
   Steve Orvell,
-  Steven Faulkner,
   Steven Skelton,
   Tab Atkins,
   Takayoshi Kochi,
@@ -147,12 +167,15 @@
   Tomasz Jakut,
   Tomek Wytrębowicz,
   Tomer Cohen,
-  Travis Leithead,
+  Travis Leithead, <!-- https://github.com/travisleithead -->
+  Travis Safford,
   Trey Shugart,
-  "Unor", <!-- on github -->
+  "Unor", <!-- https://github.com/Unor -->
   "wallabag.it", <!-- twitter -->
   William Chen,
   Wolfgang Illmeyer,
+  Xiaoran Wang,
+  Yay295 <!-- github -->
   and Yves Lafon
 
   This specification incorporates work of the <a href="https://www.w3.org/webperf/">Web Performance Working Group</a>, the
@@ -190,7 +213,7 @@
   Addison Phillips,
   Adele Peterson,
   Adrian Bateman,
-  Adrian Roselli,
+  Adrian Roselli, <!-- https://github.com/aardrian -->
   Adrian Sutton,
   Agustín Fernández,
   Aharon (Vladimir) Lanin,
@@ -198,7 +221,7 @@
   Akatsuki Kitamura,
   Alan Johnson,
   Alan Plum,
-  Alastair Campbell,
+  Alastair Campbell, <!-- https://github.com/alastc -->
   Alejandro G. Castro,
   Alexander Farkas,
   Alexander J. Vincent,
@@ -214,22 +237,22 @@
   Alex Nicolaou,
   Alex Plescan,
   Alex Rousskov,
-  Alice Boxhall,
+  Alice Boxhall, <!-- https://github.com/alice -->
   Alice Wonder,
   Allan Clements,
-  "Alohci", <!--https://github.com/Alohci-->
-  "alrdytaken", <!--https://github.com/alrdytaken-->
+  "Alohci", <!-- https://github.com/Alohci -->
+  "alrdytaken", <!-- https://github.com/alrdytaken -->
   Amanda Rush,
-  Amelia Bellamy-Royds,
+  Amelia Bellamy-Royds, <!-- https://github.com/AmeliaBR -->
   Ami Fischman,
   Amos Jeffries,
   Ana Luiza Bastos,
   Anders Carlsson,
   Andfrew Macpherson,
-  "andjc", <!--https://github.com/andjc-->
+  "andjc", <!-- https://github.com/andjc -->
   Andrea Rendine,
   Andreas Kling,
-  Andreas<!-- mqmq87 -->,
+  Andreas <!-- mqmq87 -->,
   André E. Veltstra,
   Andrei Popescu,
   Andres Gomez,
@@ -265,7 +288,7 @@
   Antonio Olmo Titos,
   Antti Koivisto,
   Anup Kumar Maharjan,
-  "aravindxz", <!--https://github.com/aravindxz-->
+  "aravindxz", <!-- https://github.com/aravindxz -->
   Arkadiusz Michalski,
   Arne Thomassen,
   Aron Spohr,
@@ -277,14 +300,14 @@
   Arun Patole,
   Aryeh Gregor,
   Asbjørn Ulsberg,
-  Ashley Bischoff,
+  Ashley Bischoff, <!-- https://github.com/handcoding -->
   Ashley Gullen,
   Ashley Sheridan,
   Atsushi Takayama,
   Aurelien Levy,
   Ave Wrigley,
   Avram Eisner,
-  "avrljk", <!--https://github.com/avrljk-->
+  "avrljk", <!-- https://github.com/avrljk -->
   Axel Bocciarelli,
   Axel Dahmen,
   방성범 (Bang Seongbeom),
@@ -314,7 +337,7 @@
   Bobby Holly,
   Bob Lund,
   Bob Owen,
-  "bogdan0083", <!--https://github.com/bogdan0083-->
+  "bogdan0083", <!-- https://github.com/bogdan0083 -->
   Boris Zbarsky,
   Brad Fults,
   Brad Neuberg,
@@ -335,7 +358,7 @@
   Brian Wilson,
   Bruce Bailey,
   Bruce D'Arcus,
-  Bruce Lawson,
+  Bruce Lawson, <!-- https://github.com/brucelawson -->
   Bruce Miller,
   Bryan Sullivan,
   Bugs Nash,
@@ -347,10 +370,10 @@
   Carlos Perelló Marín,
   Carolyn MacLeod,
   Casey Leask,
-  Chaals McCathie Nevile,
+  Chaals McCathie Nevile, <!-- https://github.com/chaals -->
   Chad Henderson,
   Chao Cai,
-  "Chaoaretasty", <!--https://github.com/Chaoaretasty-->
+  "Chaoaretasty", <!-- https://github.com/Chaoaretasty -->
   Charles Iliya Krempeaux,
   Charles La Pierre,
   Charl van Niekerk,
@@ -380,7 +403,7 @@
   Collin Anderson
   Colin Fine,
   Collin Jackson,
-  "Comandeer", <!--https://github.com/Comandeer-->
+  "Comandeer", <!-- https://github.com/Comandeer -->
   Corey Farwell,
   Corprew Reed,
   Cory Simmons,
@@ -418,7 +441,7 @@
   Dave Hodder,
   Dave Lampton,
   Dave Singer,
-  Dave Townsend<!-- Mossop -->,
+  Dave Townsend <!-- https://github.com/Mossop -->,
   David Baron,
   David Bloom,
   David Bruant,
@@ -449,7 +472,7 @@
   Debi Orton,
   Deborah Kaplan,
   Denis Ah-Kang,
-  Derek Featherstone,
+  Derek Featherstone, <!-- https://github.com/feather -->
   Derek Koziol,
   Devarshi Pant,
   Devdatta,
@@ -476,7 +499,7 @@
   Doug Simpkinson,
   Drew McLellan,
   Drew Wilson,
-  "duckware", <!-- https://github.com/duckware-->
+  "duckware", <!-- https://github.com/duckware -->
   Dylan Barrell,
   Edmund Lai,
   Eduardo Vela,
@@ -498,7 +521,7 @@
   Emily Stark,
   Eric Carlson,
   Eric Casler,
-  Eric Eggert,
+  Eric Eggert, <!-- https://github.com/yatil -->
   Eric Lawrence,
   Eric Rescorla,
   Eric Semling,
@@ -532,7 +555,7 @@
   Gary Kačmarčík,
   Gavin Carothers,
   Gavin Kistner,
-  "genwilkerhan", <!-- https://github.com/genwilkerhan-->
+  "genwilkerhan", <!-- https://github.com/genwilkerhan -->
   Geoffrey Garen,
   Geoffrey Sneddon,
   Geoff Richards,
@@ -540,7 +563,7 @@
   George Lund,
   George Ornbo,
   Gervase Markham,
-  Gez Lemon,
+  Gez Lemon, <!-- https://github.com/gezlemon -->
   Gianmarco Armellin,
   Giovanni Campagna,
   Giuseppe Pascale,
@@ -556,7 +579,7 @@
   Grey,
   Guido Bouman,
   Guilherme Johansson Tramontina,
-  "gunlinux", <!-- https://github.com/gunlinux-->
+  "gunlinux", <!-- https://github.com/gunlinux -->
   Gytis Jakutonis,
   Habib Virji,
   Håkon Wium Lie,
@@ -570,16 +593,16 @@
   Henri Sivonen,
   Henry Mason,
   Henry Story,
-  Heydon Pickering,
+  Heydon Pickering, <!-- https://github.com/heydon -->
   Hugh Guiney,
   Hugh Winkler,
   Ian Bicking,
   Ian Clelland,
   Ian Davis,
-  Ian Devlin,
+  Ian Devlin, <!-- https://github.com/iandevlin -->
   Ian Fette,
   Ian Kilpatrick,
-  Ian Pouncey,
+  Ian Pouncey, <!-- https://github.com/IanPouncey -->
   Ian Yang,
   Ido Green,
   Ignacio Javier,
@@ -607,7 +630,7 @@
   James M Snell,
   James Perrett,
   James Robinson,
-  James "thx1111", <!-- https://github.com/thx1111-->
+  James "thx1111", <!-- https://github.com/thx1111 -->
   Jamie Lokier,
   Janina Saika,
   Jan-Klaas Kollhof,
@@ -625,14 +648,13 @@
   Jasper St. Pierre,
   Jatinder Mann,
   J.C. Jones,
-  "jdsmith3000", <!-- https://github.com/jdsmith3000-->
-  Jdsmith3000, <!-- https://github/com/jdsmith3000 -->
+  "jdsmith3000", <!-- https://github.com/jdsmith3000 -->
   Jeanne Spellman,
   Jed Hartman,
   Jeff Balogh,
   Jeff Cutsinger,
   Jeffrey Yasskin,
-  Jeffrey Zeldman,
+  Jeffrey Zeldman, <!-- https://github.com/zeldman -->
   Jeff Schiller,
   Jeff Walden,
   胡慧鋒 (Jennifer Braithwaite),
@@ -688,7 +710,7 @@
   Jonathan Watt,
   Jonathan Worent,
   Jon Ferraiolo,
-  Jon Gibbins,
+  Jon Gibbins, <!-- https://github.com/dotjay -->
   Jon Gunderson,
   Jon Metz,
   Jonny Axelsson,
@@ -707,10 +729,10 @@
   Joshua Bell,
   Joshua Berenhaus,
   Joshua Randall,
-  Jourdan, <!--https://github.com/jourdanritchey-->
+  Jourdan, <!-- https://github.com/jourdanritchey -->
   JP DeVries,
   J.S. Choi,
-  jthiyagarajan, <!-- https://github.com/jthiyagarajan -->
+  "jthiyagarajan", <!-- https://github.com/jthiyagarajan -->
   Jukka K. Korpela,
   Jules Clément-Ripoche,
   Julian Reschke,
@@ -723,10 +745,10 @@
   Justin Schuh,
   Justin Sinclair,
   Kai Hendry,
-  呂康豪 (KangHao Lu)<!-- Kenny, kennyluck-->,
+  呂康豪 (KangHao Lu) <!-- Kenny, kennyluck -->,
   Kangxi "kxgio" 朕的產生器,
   Karl Dubost,
-  Karl Groves,
+  Karl Groves, <!-- https://github.com/karlgroves -->
   Kartikaya Gupta,
   Ka-Sing Chou,
   Kathy Walton,
@@ -747,12 +769,12 @@
   Kristof Zelechovski,
   Krzysztof Maczyński,
   Kyle Barnhart,
-  Kyle Hofmann<!-- Ozob -->,
+  Kyle Hofmann <!-- Ozob -->,
   Kyle Huey,
   Lachlan Hunt,
   Larry Masinter,
   Larry Page,
-  Lars Gunther<!-- Keryx Web -->,
+  Lars Gunther <!-- Keryx Web -->,
   Lars Solberg,
   Laura Carlson,
   Laura Granka,
@@ -760,7 +782,7 @@
   Laura Wisewell,
   Laurens Holst,
   Lawrence Forooghian,
-  Lea Verou,
+  Lea Verou, <!-- https://github.com/LeaVerou -->
   Lee Kowalkowski,
   Leif Halvard Silli,
   Leif Kornstaedt,
@@ -768,18 +790,18 @@
   Léonard Bouchet,
   Leonard Rosenthol,
   Leon de Rijke,
-  Léonie Watson,
+  Léonie Watson, <!-- https://github.com/ljwatson -->
   Leons Petrazickis,
   Liam Quin,
   Lobotom Dysmon,
-  Logan<!-- on moz irc -->,
+  Logan <!-- on moz irc -->,
   Lorenzo Scalfani,
   Loune,
   Łukasz Pilorz,
   Luke Browell,
   Luke Kenneth Casson Leighton,
   Maciej Stachowiak,
-  Magnus Kristiansen<!-- Dashiva -->,
+  Magnus Kristiansen <!-- Dashiva -->,
   Maik Merten,
   Majid Valipour,
   Malcolm Rowe,
@@ -788,7 +810,7 @@
   Manuel Strehl,
   Manu Sporny,
   Marat Talanin,
-  Marc G. "mouvedia", <!-- https://github.com/mouvedia-->
+  Marc G. "mouvedia", <!-- https://github.com/mouvedia -->
   Marc Hoyois,
   Marcus Bointon,
   Mark Amery,
@@ -800,7 +822,7 @@
   Mark Rejhon,
   Mark Rogers,
   Mark Root-Wiley,
-  Mark Rowe<!--bdash-->,
+  Mark Rowe <!-- https://github.com/bdash -->,
   Mark Schenk,
   Mark Vickers,
   Mark Wilton-Jones,
@@ -831,7 +853,7 @@
   Matthew Thomas,
   Mattias Waldau,
   Matt May,
-  "Mattok", <!-- https://github.com/mattok-->
+  "Mattok", <!-- https://github.com/mattok -->
   Matt Rakow,
   Matt Schmidt,
   Matt Wright,
@@ -842,7 +864,7 @@
   Mia Lipner,
   Micah Dubinko,
   Michael A. Nachbaur,
-  Michael A. Puls II<!--Shadow2531-->,
+  Michael A. Puls II <!-- Shadow2531 -->,
   Michael Carter,
   Michael Daskalov,
   Michael Day,
@@ -863,10 +885,10 @@
   Michiel Bijl,
   Michiel van der Blonk,
   Mihai Parparita,
-  Mihai Şucan<!-- from ROBO Design -->,
+  Mihai Şucan <!-- from ROBO Design -->,
   "Mijabi", <!-- https://github.com/mijabi-->
   Mike Brown,
-  Mike Dierken<!-- S. Mike Dierken -->,
+  Mike Dierken <!-- S. Mike Dierken -->,
   Mike Dixon,
   Mike Hearn,
   Mike Schinkel,
@@ -876,7 +898,7 @@
   Mikko Rantalainen,
   "mirabilos", <!-- https://github.com/mirabilos -->
   Mitchell Evan,
-  Mohamed Zergaoui<!-- Innovimax SARL -->,
+  Mohamed Zergaoui <!-- Innovimax SARL -->,
   Mohammad Al Houssami,
   Momdo Nakamura,
   "Moonchild", <!-- https://github.com/wolfbeast -->
@@ -901,7 +923,7 @@
   Nick Levinson,
   Nickolay Ponomarev,
   Nicolas Gallagher,
-  Nicolas Hoffmann,
+  Nicolas Hoffmann, <!-- https://github.com/nico3333fr -->
   Nicolas Hoizey,
   Nico Schneider,
   Nils Solanki,
@@ -925,7 +947,7 @@
   Pankit Gami,
   Patrick Dark,
   Patrick Garies,
-  Patrick H. Lauke,
+  Patrick H. Lauke, <!-- https://github.com/patrickhlauke -->
   Patrick Lauke,
   Patrik Persson,
   Paul Adenot,
@@ -947,13 +969,13 @@
   Philippe De Ryck,
   Philippe Le Hégaret,
   Philip Taylor,
-  Philip TAYLOR<!-- a different one -->,
+  Philip TAYLOR <!-- a different one -->,
   Phil Pickering,
   Phil Smith,
   Prateek Rungta,
   Pravir Gupta,
   Prayag Verma,
-  李普君 (Pujun Li)<!-- masa jack -->,
+  李普君 (Pujun Li) <!-- masa jack -->,
   Rabab Gomaa,
   Rachel Comerford,
   Rachel White,
@@ -969,7 +991,7 @@
   Reinhardt Hierl,
   Remci Mizkur,
   Remco,
-  Remy Sharp,
+  Remy Sharp, <!-- https://github.com/remy -->
   Rene Saarsoo,
   Rene Stach,
   Ric Hardacre,
@@ -1003,7 +1025,7 @@
   Roman Ivanov,
   Roy Fielding,
   Roy Tinker,
-  "r-romaniuk", <!-- https://github.com/r-romaniuk-->
+  "r-romaniuk", <!-- https://github.com/r-romaniuk -->
   Ruben Martinez,
   Russ Weakley,
   Ruud Steltenpool,
@@ -1020,10 +1042,11 @@
   Samy Kamkar,
   Sander van Lambalgen,
   Sangwhan Moon,
-  Sara Soueidan,
+  Sara Soueidan, <!-- https://github.com/SaraSoueidan -->
   Sarven Capadisli,
   Scott González,
   Scott Hess,
+  Scott O'Hara, <!-- https://github.com/scottaohara -->
   Sean Fraser,
   Sean Hayes,
   Sean Hogan,
@@ -1031,7 +1054,7 @@
   Sebastian Markbåge,
   Sebastian Schnitzenbaumer,
   Sebastian Zartner,
-  "SelenIT", <!-- https://github.com/SelenIT-->
+  "SelenIT", <!-- https://github.com/SelenIT -->
   Sendil Kumar N,
   Sergei Shoshin,
   Sergey Artemov,
@@ -1058,10 +1081,10 @@
   S. Mike Dierken,
   Smylers,
   <span lang="tr">Tantek Çelik</span>,
-  "spixi", <!-- https://github.com/spixi-->
+  "spixi", <!-- https://github.com/spixi -->
   Srirama Chandra Sekhar Mogali,
   Stanton McCandlish,
-  "stasoid", <!-- https://github.com/stasoid-->
+  "stasoid", <!-- https://github.com/stasoid -->
   Stefan Götz,
   Stefan Håkansson,
   Stefan Haustein,
@@ -1075,7 +1098,7 @@
   Stephen Ma,
   Stephen White,
   Steve Comstock,
-  Steve Faulkner,
+  Steve Faulkner, <!-- https://github.com/stevefaulkner -->
   Steven Atkin,
   Steven Bennett,
   Steven Garrity,
@@ -1086,6 +1109,7 @@
   Stewart Brodie,
   Stuart Ballard,
   Stuart Langridge,
+  Stuart Nelson,
   Stuart Parmenter,
   Stuart P Bentley,
   Stuart Robson,
@@ -1103,8 +1127,8 @@
   Ted Mielczarek,
   Terence Eden,
   Terrence Wood,
-  "thapliyalshivam", <!-- https://github.com/thapliyalshivam-->
-  "TheEskhaton", <!-- https://github.com/TheEskhaton-->
+  "thapliyalshivam", <!-- https://github.com/thapliyalshivam -->
+  "TheEskhaton", <!-- https://github.com/TheEskhaton -->
   Theresa O'Connor,
   Thierry Koblentz,
   Thijs van der Vossen,
@@ -1133,11 +1157,11 @@
   Tooru Fujisawa,
   Travis Leithead,
   Trevor Saunders,
-  triple-underscore, <!-- on GitHub -->
+  "triple-underscore", <!-- https://github.com/triple-underscore -->
   Tyler Close,
   Tyler Deitz,
   Tzviya Siegman,
-  "Unor", <!-- https://github.com/unor-->
+  "Unor", <!-- https://github.com/unor -->
   Vadim Makeev,
   Varun Dua,
   Victor Carbune,
@@ -1152,7 +1176,7 @@
   Wakaba,
   Wayne Carr,
   Wayne Pollock,
-  "WebDevCA", <!-- https://github.com/user/WebDevCA-->
+  "WebDevCA", <!-- https://github.com/user/WebDevCA -->
   Wellington Fernando de Macedo,
   Wes, <!-- https://github.com/Netmosfera -->
   Wes, <!-- https://github.com/wesnetmo -->
@@ -1164,15 +1188,15 @@
   Wladimir Palant,
   Wojciech Mach,
   Wolfram Kriesing,
-  "Wolonetz", <!-- https://github.com/user/wolonetz-->
-  "woowaEcho", <!-- https://github.com/woowaEcho-->
+  "Wolonetz", <!-- https://github.com/user/wolonetz -->
+  "woowaEcho", <!-- https://github.com/woowaEcho -->
   Xan Gregg,
   "Xaviju", <!-- https://github.com/Xaivju -->
   윤석찬 (Channy Yun),
   xenotheme,
   Yang Chen,
   Yann Gouffon,
-  Yaroslaw "kciray8", <!-- https://github.com/kciray8-->
+  Yaroslaw "kciray8", <!-- https://github.com/kciray8 -->
   Yehuda Katz,
   Ye-Kui Wang,
   Yi-An Huang,
@@ -1181,8 +1205,8 @@
   Yonathan Randolph,
   Yuzo Fujishima,
   Zach Saucier,
-  "Zambonifofex", <!-- https://github.com/Zambonifofex-->
-  "Zelgadis87" <!-- https://github.com/Zelgadis87-->
+  "Zambonifofex", <!-- https://github.com/Zambonifofex -->
+  "Zelgadis87" <!-- https://github.com/Zelgadis87 -->
   Zhenbin Xu,
   Zoltan Herczeg,
   and Øistein E. Andersen,
@@ -1211,6 +1235,10 @@
 
   <a href="./images/sample-meter.png">The screen shot</a> used within the <{meter}> element
   was created <a href="https://github.com/scottaohara">by Scott O'Hara</a>.
+  (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>)
+
+  <a href="./images/rendered-custom-element.jpg">The screen shot</a> used within the
+  <{slot}> element was created <a href="https://github.com/scottaohara">by Scott O'Hara</a>.
   (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>)
 
   Parts of this specification are © Copyright 2004-2014 Apple Inc., Mozilla Foundation, and Opera

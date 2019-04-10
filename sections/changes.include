@@ -7,12 +7,117 @@
 
   Full details of all changes since 12 January 2016 are available from the
   <a href="https://github.com/w3c/html/commits/master">commit log</a> of the
-  <a href="https://github.com/w3c/html/">w3c/html github repository</a>, including various
+  <a href="https://github.com/w3c/html/">W3C/HTML GitHub repository</a>, including various
   editorial and linking fixes.
 
-<h3 id="changes-wd3">Changes since the <a href="https://www.w3.org/TR/2017/WD-html53-20170206/">HTML 5.3 Second Public Working Draft</a></h3>
+  <dt><a href="https://github.com/w3c/html/pull/1582">Style sheets added by <code>link</code> elements
+  only block scripts if they their media matches the environment</a>.</dt>
+    <dd>Fixed <a href="https://github.com/w3c/html/issues/1488">issue 1488</a></dd>
 
-  <dl>
+
+<h3 id="changes-wd5">Changes since the
+  <a href="https://www.w3.org/TR/2018/WD-html53-20180703/">HTML 5.3 Fourth Working Draft</a>
+</h3>
+
+<dl>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1580">Editorial</a>: Update the
+    <a href="http://w3c.github.io/html/introduction.html#fingerprint">privacy section</a>.
+  </dt>
+  <dd>
+    Fixed issues <a href="https://github.com/w3c/html/issues/1311">1311</a> and
+    <a href="https://github.com/w3c/html/issues/1312">1312</a> related to <{audio}>,
+    and noted a class of privacy concerns based on interaction with the user's external environment
+    that were not previously covered.
+  </dd>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1517">Removes the concept of autofill mantles</a>
+  </dt>
+  <dd>
+    Fixed <a href="https://github.com/w3c/html/issues/1389">Issue 1389</a> - clarify usage of
+    <{input/autocomplete}> attribute on <code>input type=hidden</code>
+  </dd>
+
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1576">Deprecate <code>object</code> from forms</a>
+  </dt>
+  <dd>
+    Fixed
+    <a href="https://github.com/w3c/html/issues/1543">object element doesn't do anything in forms</a>
+  </dd>
+
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1581">Editorial: update security advice</a>
+  </dt>
+  <dd>
+    Fixed
+    <a href="https://github.com/w3c/html/issues/952">Update clickjacking and CSRF protection guidance</a>
+  </dd>
+</dl>
+
+<dl>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1579">Be explicit that user agents should support the same set of audio codecs in both <coode>audio</code> and <code>video</code> elements</a>.
+  </dt>
+  <dd>Fixed <a href="https://github.com/w3c/html/issues/1430">issue 1430</a></dd>
+  <dd>
+    Fixed <a href="https://github.com/w3c/html/issues/1389">clarify usage of
+    <code>autocomplete</code> attribute on <code>input type=hidden</code></a>
+  </dd>
+
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1578">Strengthen the encouragement to use the ping attribute for link tracking</a>.
+  </dt>
+  <dd>Fixed <a href="https://github.com/w3c/html/issues/1456">issue 1456</a></dd>
+
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1581">Editorial: update security guidance</a>
+  </dt>
+  <dd>Fixed <a href="https://github.com/w3c/html/issues/952">issue 952</a></dd>
+</dl>
+
+<h3 id="changes-wd4">
+  Changes between the
+  <a href="https://www.w3.org/TR/2018/WD-html53-20180703/">HTML 5.3 Fourth Working Draft</a>
+  and the
+  <a href="https://www.w3.org/TR/2018/WD-html53-20180426/">HTML 5.3 Third Working Draft</a>
+</h3>
+<dl>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1479"><code>http-equiv="set-cookie"</code> has no effect</a>.
+  </dt>
+
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1489">Define <code>HTMLOrSVGElement</code> mixin interface</a>.
+  </dt>
+  <dd>Fixed <a href="https://github.com/w3c/html/issues/1299">issue 1299</a></dd>
+</dl>
+
+<h3 id="changes-wd3">
+  Changes between the
+  <a href="https://www.w3.org/TR/2018/WD-html53-20180426/">HTML 5.3 Third Public Working Draft</a>
+  and the
+  <a href="https://www.w3.org/TR/2017/WD-html53-20170206/">HTML 5.3 Second Public Working Draft</a>
+</h3>
+
+<dl>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1467">Add <code>canonical</code></a>
+    as a supported link type.
+  </dt>
+  <dd>Defined in [[rfc6596]].</dd>
+  <dt>
+    <a href="https://github.com/w3c/html/pull/1406">Only select a browsing context by name</a>
+    from within the <a>unit of related browsing contexts</a>.
+  </dt>
+  <dd>Match Firefox and Blink changes, to mitigate <a href="https://github.com/w3c/html/issues/262">an XSS attack vector</a>.</dd>
+  <dt><a href="https://github.com/w3c/html/pull/1407">loosen the rule of the <code>rb</code> element</a></dt>
+   <dd>the <code>rb</code> element can be parsed propertly if the current node is a child of the <code>ruby</code> element</dd>
+  <dt><a href="https://github.com/w3c/html/pull/1403">Add the <code>slot</code> element</a></dt>
+  <dt><a href="https://github.com/w3c/html/pull/1329">Add the <code>:defined</code> psuedo-class selector definition</a></dt>
+   <dd>Substantive change for custom elements.</dd>
+  <dt><a href="https://github.com/w3c/html/pull/1329">Add the <code>:defined</code> psuedo-class selector definition</a></dt>
+   <dd>Substantive change for custom elements. This is at risk with only one known implementation</dd>
     <dt><a href="https://github.com/w3c/html/pull/1343">Add autonomous custom elements</a></dd>
     <dd>Substantive change, implemented in Firefox, Blink, Webkit</dd>
     <dd>Includes the {{CustomElementRegistry}} object, the {{CEReactions}} and {{HTMLConstructor}}
@@ -33,13 +138,11 @@
       <a href="https://github.com/w3c/html/pull/1331">Focusing the dialog instead of the first focusable element if there are no autofocus elements</a>
     </dt>
     <dd>
-      Substantive change. Fixes <a href="https://github.com/w3c/html/issues/773">issue 773</a>. Potentially at risk.
-    </dt>
-      <a href="https://github.com/w3c/html/pull/1332">Clarify that the DOCTYPE is ignored, if present, for srcdoc</a>
+      Substantive change. Fixes <a href="https://github.com/w3c/html/issues/773">issue 773</a>. Potentially at risk.</dd>
+    <dt><a href="https://github.com/w3c/html/pull/1332">Clarify that the DOCTYPE is ignored, if present, for srcdoc</a>
     </dt>
     <dd>
-      Clarification, match reality.
-    </dd>
+      Clarification, match reality. Fixes <a href="https://github.com/w3c/html/issues/254">issue 254</a></dd>
     <dt><a href="https://github.com/w3c/html/pull/1323">Added <code>customElements</code> IDL attribute</a> to the {{Window}} object</dt>
       <dd>Fixes #1274. Substantive change matching new implementation of Custom Elements in Blink / Gecko.</dd>
       <dt><a href="https://github.com/w3c/html/pull/1220">Other Pragma Directives removed.</a></dt>
@@ -47,7 +150,7 @@
     <dt><a href="https://github.com/w3c/html/pull/1204">Caption end tag can be ommitted.</a></dt>
       <dd>Substantive change to match reality. Fixed <a href="https://github.com/w3c/html/issues/1158">issue 1158</a></dd>
     <dt>
-      <a href="https://github.com/w3c/html/pull/1281">Add Windows Clipboard Format for the media-type registrations of HTML</a>
+      <a href="https://github.com/w3c/html/pull/1282">Add Windows Clipboard Format for the media-type registrations of HTML</a>
     </dt>
       <dt>
       <a href="https://github.com/w3c/html/pull/1273/">Mandate UTF-8</a>
@@ -61,6 +164,11 @@
    </dd>
   <dt><a href="https://github.com/w3c/html/pull/1372">Adds autofill warning</a></dt>
   <dd>Editorial: Adds warning that UA should verify visibility of forms with the <code>autocomplete</code> attribute in the autofill expectation mantle. Fixed <a href="https://github.com/w3c/html/issues/1285">issue 1285</a></dd>
+  <dt><a href="https://github.com/w3c/html/pull/1302">Include MacOSX uniform type identifiers</a></dt>
+  <dd>Editorial: Added MacOS uniform type identifier for media-type registrations. Fixed <a href="https://github.com/w3c/html/issues/227">issue 227</a></dd>
+  <dd><a href="https://github.com/w3c/html/pull/1472">Removed support for &lt;applet&gt;</a>.</dd>
+  <dt><a href="https://github.com/w3c/html/pull/1475">Remove registerContentHandler(), and isHandlerRegistered()</a></dt>
+  <dt><a href="https://github.com/w3c/html/pull/1485">Limit crossOrigin reflection to only known values</a></dt>
   </dl>
 
 <h3 id="changes-wd2">Changes between the <a href="https://www.w3.org/TR/2017/WD-html53-20170206/">HTML 5.3 Second Public Working Draft</a>
@@ -82,7 +190,7 @@ and the <a href="https://www.w3.org/TR/2017/WD-html53-20171214/">HTML 5.3 First 
       <dd>Substantive change. Fixed <a href="https://github.com/w3c/html/issues/890">issue 890</a></dd>
     <dt><a href="https://github.com/w3c/html/pull/1123">Removing magic alignment for <code>dialog</code> element</a></dt>
         <dd>Removed due to lack of implementation. Fixed <a href="https://github.com/w3c/html/issues/1108">issue 1108</a></dd>
-    <dt><a href="https://github.com/w3c/html/pull/tbd">nonce now uses</a> the <a href="#cryptographicnonce">[[<span>CryptographicNonce</span>]]</a></dt>
+    <dt><a href="https://github.com/w3c/html/pull/1140">nonce now uses</a> the <a href="#cryptographicnonce">[[<span>CryptographicNonce</span>]]</a></dt>
         <dd><a href="https://github.com/w3c/html/issues/1121">Hide <code>nonce</code> content attribute to avoid leaking it.</a></dd>
     <dt><a href="https://github.com/w3c/html/pull/1152">Removed section on <code>anchor-points</code></a></dt>
             <dd>Substantive change. Fixed <a href="https://github.com/w3c/html/issues/1104">issue 1104</a></dd>

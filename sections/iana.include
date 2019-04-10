@@ -37,8 +37,11 @@
       :: The <code>charset</code> parameter may be provided to specify the
           <a>document's character encoding</a>, overriding any
           [=character encoding declarations=] in the document other than a Byte Order Mark (BOM).
-          The parameter's value must be an <a>ASCII case-insensitive</a> match for the string
+          For newly created documents, the parameter's value must be an <a>ASCII case-insensitive</a> match for the string
           "<code>utf-8</code>".
+          For legacy documents, the character encoding name given must be an 
+          <a>ASCII case-insensitive</a> match for one of the <a lt="character encoding">labels</a> 
+          of the <a>character encoding</a> used to serialize the file. [[!ENCODING]]
   : Encoding considerations:
   :: 8bit (see the section on [=character encoding declarations=])
   : Security considerations:
@@ -89,12 +92,11 @@
       :: "<code>html</code>" and "<code>htm</code>" are commonly, but certainly not exclusively,
           used as the extension for HTML documents.
       : Macintosh file type code(s):
-	  :: <code>TEXT</code>
-      : <a href="https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html">Macintosh Uniform Type Identifier</a>:
       :: <code>TEXT</code>
+      : <a href="https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html">Macintosh Uniform Type Identifier</a>:
+      :: <code>public.html</code>
       : Windows Clipboard Format:
       :: <a href="https://msdn.microsoft.com/en-us/library/ms649015(v=vs.85).aspx">CF_HTML</a>
-      :: "<code>public/html</code>"
   : Person &amp; email address to contact for further information:
   :: World Wide Web Consortium &lt;web-human@w3.org&gt;
   : Intended usage:
@@ -244,7 +246,7 @@
   : Change controller:
   :: Ian Hickson &lt;ian@hixie.ch>
   : References:
-  :: <cite>Custom scheme and content handlers</cite>, HTML Living Standard:
+  :: <cite>Custom scheme handlers</cite>, HTML Living Standard:
       <a href="https://html.spec.whatwg.org/#custom-handlers">https://html.spec.whatwg.org/#custom-handlers</a>
 
 <h3 id="text-ping">text/ping</h3>

@@ -8,6 +8,7 @@ Status: ED
 TR: https://www.w3.org/TR/html53/
 ED: https://w3c.github.io/html/
 Repository: w3c/html
+Prepare For TR: true
 Test Suite: https://w3c-test.org/html/
 Boilerplate: omit feedback-header
 !Participate: <a href="https://github.com/w3c/html/issues/new">File an issue</a> (<a href="https://github.com/w3c/html/issues">open issues</a>)
@@ -445,7 +446,7 @@ urlPrefix: https://drafts.csswg.org/cssom/#; type: dfn; spec: CSSOM;
 
 # ************************************ DOM **************************************************
 
-urlPrefix: https://www.w3.org/TR/dom/#; spec: DOM
+urlPrefix: https://www.w3.org/TR/dom41/#; spec: DOM
     type:interface; url: document
         text:Document
     urlPrefix: concept-; type: dfn
@@ -458,9 +459,9 @@ urlPrefix: https://www.w3.org/TR/dom/#; spec: DOM
             text: document's character encoding; url: encoding
             text: content type
         urlPrefix: element-
+            text: defined
             text: custom
             text: custom element state
-            text: defined
         text: document url
         text: element attribute
         text: element interface
@@ -493,6 +494,7 @@ urlPrefix: https://www.w3.org/TR/dom/#; spec: DOM
         text: shadow including tree order
     urlPrefix: interface-; type: interface
         text: Element
+    text: assign a slot; type: dfn
     text: represented by the collection; type: dfn
     text: ShadowRoot; type: interface
     url: node-remove; type: dfn
@@ -613,6 +615,7 @@ urlPrefix: https://tc39.github.io/ecma262/#; type: dfn; spec: ECMA-262
         text: Script Record; url: script-records
         text: ScriptEvaluation; url: runtime-semantics-scriptevaluation
         text: Source Text Module Record; url: source-text-module-records
+        text: SetImmutablePrototype; url: set-immutable-prototype
         text: Strict Equality Comparison
         text: ToBoolean
         text: ToString
@@ -624,6 +627,11 @@ urlPrefix: https://tc39.github.io/ecma262/#; type: dfn; spec: ECMA-262
     text: The TypedArray Constructors; url: table-49
     text: TypedArrayCreate; url: typedarray-create
     text: Use Strict Directive
+
+# ************************************ EDITING *********************************************
+
+urlPrefix: https://w3c.github.io/editing/execCommand.html#; type: dfn; spec: EDITING;
+    text: editing host
 
 # ************************************ ENCODING *********************************************
 
@@ -745,6 +753,8 @@ urlPrefix: https://tools.ietf.org/html/
         text: content-language; url: section-3.1.3.2
         text: accept-language; url: section-5.3.5
         text: accept; url: section-5.3.2
+        text: HTTP GET; url: section-4.3.1
+        text: HTTP POST; url: section-4.3.3
     urlPrefix: rfc7231#; spec: rfc7231;
         text: media-type; type: dfn; url: section-3.1.1.1
         text: referer; type: http-header; url: section-5.5.2
@@ -788,6 +798,8 @@ url: https://www.w3.org/TR/SVGTiny12/script.html#ScriptContentProcessing; type: 
 urlPrefix: https://www.w3.org/TR/SVG2/single-page.html#; type: element; spec: svg2; for: svg;
     text: script; url: interact-ScriptElement
     text: title; url: struct-TitleElement
+url: https://www.w3.org/TR/SVG11/types.html#InterfaceSVGElement; type: dfn; spec: SVG11; for: svg;
+    text: SVGElement
 
 # ********************************** UI EVENTS **********************************************
 
@@ -954,6 +966,7 @@ urlPrefix: https://www.w3.org/TR/WebIDL-1/#; spec: WEBIDL-1
             text: double
             text: Error
             text: long
+            text: sequence
             text: unrestricted double
             text: unsigned long
             text: enumeration
@@ -963,6 +976,8 @@ urlPrefix: https://www.w3.org/TR/WebIDL-1/#; spec: WEBIDL-1
         type: interface;
             text: DOMString[]; url: DOMString
             text: EmptyString; url: TreatNullAs
+    urlPrefix: slot-; type: dfn;
+        text: assigned nodes
 
 # ****************************** XML (and related) ******************************************
 
@@ -1078,6 +1093,11 @@ spec:ecma-262;
     "href": "https://drafts.csswg.org/css-logical-props/",
     "status": "ED",
     "publisher": "W3C"
+  },
+  "Dolphin": {
+    "authors": ["Guoming Zhang", "Chen Yan", "Xiaoyu Ji", "Tianchen Zhang", "Taimin Zhang", "Wenyuan XU"],
+    "title": "DolphinAttack: Inaudible Voice Commands",
+    "href": "https://arxiv.org/pdf/1708.09537.pdf"
   },
   "SRGB": {
     "title": "Amendment 1 - Multimedia systems and equipment - Colour measurement and management - Part 2-1: Colour management - Default RGB colour space - sRGB",

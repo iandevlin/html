@@ -1032,8 +1032,9 @@
     <dd>Where <a>flow content</a> is expected.</dd>
     <dt><a>Content model</a>:</dt>
     <dd>
-      <a>Flow content</a>, but with no <{main}> element descendants, or <{header}>, <{footer}> elements
-    that are not descendants of <a>sectioning content</a> which is a descendant of the <{header}>.
+      <a>Flow content</a>, but with no <{main}> element descendants, or <{header}>,
+      <{footer}> elements that are not descendants of <a>sectioning content</a> which is
+      a descendant of the <{header}>.
     </dd>
     <dt><a>Tag omission in text/html</a>:</dt>
     <dd>Neither tag is omissible</dd>
@@ -1049,7 +1050,10 @@
     </dd>
     <dt>[=Allowed ARIA state and property attributes=]:</dt>
     <dd><a>Global aria-* attributes</a></dd>
-    <dd>Any <code>aria-*</code> attributes <a href="#allowed-aria-roles-states-and-properties">applicable to the allowed roles</a>.</dd>
+    <dd>
+      Any <code>aria-*</code> attributes
+      <a href="#allowed-aria-roles-states-and-properties">applicable to the allowed roles</a>.
+    </dd>
     <dt><a>DOM interface</a>:</dt>
     <dd>Uses {{HTMLElement}}.</dd>
     <dt>
@@ -1061,7 +1065,7 @@
   </dl>
 
   The <{header}> element <a>represents</a> introductory content for its nearest ancestor <{main}>
-  element or <a>sectioning content</a> or <a>sectioning root</a> element. A <{header}> typically
+  element, <a>sectioning content</a>, or <a>sectioning root</a> element. A <{header}> typically
   contains a group of introductory or navigational aids.
 
   When a <{header}> element's nearest ancestor <a>sectioning root</a> element is the <{body}>
@@ -1070,28 +1074,19 @@
   site-oriented content, or introductory content for the page as a whole.
 
   Assistive Technology may convey to users the semantics of the <{header}> element when it applies
-  to the whole page.
-  This information can provide a hint as to the type of content. For example, the <code>role</code>
-  of the element, which in this case is "banner", can be announced by screen reader software when a
-  user navigates to a <{header}> element that is scoped to the <{body}> element. User Agents may
-  also provide methods to navigate to a <{header}> element scoped to the <{body}> element.
+  to the whole page. This information can provide a hint as to the type of content. For example,
+  the <{aria/role}> of the element, which in this case is "<code>banner</code>", can be announced
+  by screen reader software when a user navigates to a <{header}> element that is scoped to the
+  <{body}> element. User Agents may also provide methods to navigate to a <{header}> element
+  scoped to the <{body}> element.
 
   <p class="note">
-    A <{header}> element is intended to usually contain the section's heading (an
-    <code>h1</code>–<code>h6</code> element), but this is not required. The <{header}> element
+    A <{header}> element is intended to usually contain the section's heading
+    (an <code>h1</code>–<code>h6</code> element), but this is not required. The <{header}> element
     can also be used to wrap a section's table of contents, a search form, or any relevant logos.
   </p>
 
   <div class="example">
-    Here are some sample headers. This first one is for a game:
-
-    <xmp highlight="html">
-      <header>
-        <p>Welcome to...</p>
-        <h1>Voidwars!</h1>
-      </header>
-    </xmp>
-
     The following snippet shows how the element can be used to mark up a specification's header:
 
     <xmp highlight="html">
@@ -1105,17 +1100,86 @@
       </header>
     </xmp>
 
+    The following snippet shows how one might use headers within a blog. The first header
+    provides introductory content for the page as a whole, and is scoped to the <{body}>
+    element. The second provides introductory content to the primary article of the page:
+
+    <xmp highlight="html">
+      <body>
+        <header>
+          <nav>
+            <a href="/">My Awesome blog</a>
+            <ul>
+              <li><a href="/new-articles">Latest</a></li>
+              <li><a href="/old-articles">Archive</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <article>
+            <header>
+              <h1>
+                My great post!
+              </h1>
+              <p>Hello world!</p>
+            </header>
+          </article>
+        </main>
+      </body>
+    </xmp>
+
+    The next example shows a misuse of a <{header}>, as its content does not <a>represent</a> an
+    introduction to its parent <a>sectioning content</a>:
+
+    <xmp highlight="html">
+      <article>
+        <h2>Spinning Straw into Gold</h2>
+        <p>A primer on getting rich quick, while avoiding making horrible promises.</p>
+
+        ...
+
+        <header>
+          <h3>Make a point to learn obscure names</h3>
+        </header>
+        ...
+      </article>
+    </xmp>
+
+    Modifying the previous example, the following markup better aligns to the appropriate usage
+    for a <{header}>. Now the content that appropriately introduces the <{article}> is wrapped
+    within a <{header}>, and the content that was previously in a <code>header</code> is now
+    appropriately scoped to a subsection of the <code>article</code>:
+
+    <pre highlight="html">
+      &lt;article>
+        <mark>&lt;header></mark>
+          &lt;h2>Spinning Straw into Gold&lt;/h2>
+          &lt;p>A primer on getting rich quick, while avoiding making horrible promises.&lt;/p>
+        <mark>&lt;/header></mark>
+        <p>This text will guide you through the necessary steps to complete this impossible task...
+
+        <mark>&lt;section></mark>
+          &lt;header>
+            &lt;h3>Make a point to learn obscure names&lt;/h3>
+          &lt;/header>
+          <p>If you are tasked with guessing someone's name, then it should be safe to assume that common names won't get you far...
+        <mark>&lt;/section></mark>
+      &lt;/article>
+    </pre>
+
   </div>
 
   <p class="note">
-    The <{header}> element is not <a>sectioning content</a>; it doesn't introduce a new section.
+    The <{header}> element is not <a>sectioning content</a>; it doesn't introduce a new section,
+    though headings within a <code>header</code> will indicate new sections to the page.
   </p>
 
   <div class="example">
-    In this example, the page has a page heading given by the <code>h1</code> element, and two
-    subsections whose headings are given by <code>h2</code> elements. The content after the
-    <{header}> element is still part of the last subsection started in the <{header}> element,
-    because the <{header}> element doesn't take part in the <a>outline</a> algorithm.
+    In this example, the page has a page heading given by the <{h1}> element, and two subsections
+    whose headings are given by <{h2}> elements. The content after the <{header}> element is still
+    part of the last subsection started in the <{header}> element, because the <{header}> element
+    doesn't take part in the <a>outline</a> algorithm.
 
     <xmp highlight="html">
       <body>
@@ -1147,9 +1211,9 @@
 
   <div class="example">
     <p>
-      In this example, the <{article}> has a <{header}> which contains an <code>aside</code>
-      which itself contains a <{header}>. This is conforming as the descendant <code>header</code>
-      is contained within the <{aside}> element.
+      In this example, the <{article}> has a <{header}> which contains an <{aside}> which itself
+      contains a <code>header</code>. This is conforming as the descendant <code>header</code>
+      is contained within the <code>aside</code> element.
     </p>
 
     <xmp highlight="html">
@@ -1223,12 +1287,11 @@
   the page as a whole.
 
   Assistive Technology may convey to users the semantics of the <{footer}> element when it applies
-  to the whole page.
-  This information can provide a hint as to the type of content. For example, the <code>role</code>
-  of the element, which in this case is "content information", can be announced by screen reader
-  software when a user navigates to a <{footer}> element that is scoped to the <{body}> element.
-  User Agents may also provide methods to navigate to a <{footer}> element scoped to the <{body}>
-  element.
+  to the whole page. This information can provide a hint as to the type of content. For example,
+  the <{aria/role}> of the element, which in this case is "content information", can be announced
+  by screen reader software when a user navigates to a <{footer}> element that is scoped to the
+  <{body}> element. User Agents may also provide methods to navigate to a <{footer}> element
+  scoped to the <{body}> element.
 
   <p class="note">
     Contact information for the author or editor of a section belongs in an <{address}>
@@ -1252,7 +1315,7 @@
           <h1>Example Page</h1>
           <p>This is an example</p>
         </div>
-        <p>Some text explaining the example.</p>
+        <p>Some text explaining the example...</p>
         <footer><a href="../">Back to index...</a></footer>
       </body>
     </xmp>
@@ -1301,7 +1364,7 @@
                 <a href="/index.html">Blog Index</a>
               </p>
             </nav>
-            <p>Copyright © 2009 Gordon Freeman</p>
+            <p>© 2009 Gordon Freeman</p>
           </footer>
         </body>
       </html>
@@ -1310,8 +1373,8 @@
 
   <div class="example">
     Some site designs have what is sometimes referred to as "fat footers" — footers that contain a
-    lot of material, including images, links to other articles, links to pages for sending feedback,
-    special offers... in some ways, a whole "front page" in the footer.
+    lot of material, including images, links to other articles, links to pages for sending
+    feedback, special offers... in some ways, a whole "front page" in the footer.
 
     This fragment shows the bottom of a page on a site with a "fat footer":
 
@@ -1345,7 +1408,7 @@
             </ul>
           </nav>
           <p>
-            <small>Copyright © 2018 — <a href="/tos">Terms of Service</a></small>
+            <small>© 2018 — <a href="/tos">Terms of Service</a></small>
           </p>
         </footer>
       </body>
@@ -1473,7 +1536,7 @@
     There are currently no known native implementations of the outline algorithm in graphical
     browsers or assistive technology user agents, although the algorithm is implemented in other
     software such as conformance checkers and browser extensions. Additionally, there is an
-    <a href="https://github.com/whatwg/html/pull/3499'>alternate outline algorithm proposal</a>
+    <a href="https://github.com/whatwg/html/pull/3499">alternate outline algorithm proposal</a>
     being developed, as well as proposals to modify the existing algorithm
     (See <a href="https://github.com/w3c/html/pull/1005">W3C HTML issue #1005</a> and
     <a href="https://github.com/w3c/html/issues/830">W3C HTML issue #830</a>).
@@ -1689,8 +1752,8 @@
             descendants of the element.)
 
             <p class="note">
-              Recall that <code>h1</code> has the <em>highest</em> rank, and <code>h6</code> has the
-              lowest rank.
+              Recall that <code>h1</code> has the <em>highest</em> rank, and <code>h6</code> has
+              the lowest rank.
             </p>
           </dd>
 
@@ -1698,20 +1761,21 @@
           <dd>Do nothing.</dd>
         </dl>
 
-        In addition, whenever the walk exits a node, after doing the steps above, if the node is not
-        associated with a <a>section</a> yet, <dfn lt="associate section">associate the node with the <a>section</a></dfn>
+        In addition, whenever the walk exits a node, after doing the steps above, if the node is
+        not associated with a <a>section</a> yet,
+        <dfn lt="associate section">associate the node with the <a>section</a></dfn>
         <var>current section</var>.
 
-    5. Associate all non-element nodes that are in the subtree for which an outline is being created
-        with the <a>section</a> with which their parent element is associated.
-    6. Associate all nodes in the subtree with the heading of the <a>section</a> with which they are
-        associated, if any.
+    5. Associate all non-element nodes that are in the subtree for which an outline is being
+        created with the <a>section</a> with which their parent element is associated.
+    6. Associate all nodes in the subtree with the heading of the <a>section</a> with which they
+        are associated, if any.
 
     The tree of sections created by the algorithm above, or a proper subset thereof, must be used
     when generating document outlines, for example when generating tables of contents.
 
-    The outline created for <a href="#the-body-element">the <code>body</code> element</a> of a {{Document}} is the <a>outline</a>
-      of the entire document.
+    The outline created for <a href="#the-body-element">the <code>body</code> element</a> of
+      a {{Document}} is the <a>outline</a> of the entire document.
 
     When creating an interactive table of contents, entries should jump the user to the relevant
     <a>sectioning content</a> element, if the <a>section</a> was created for a real element in the

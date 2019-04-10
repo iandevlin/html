@@ -906,7 +906,6 @@
            <{object/type}>;
            <{object/typemustmatch}>;
            <{object/name}>;
-           <{object/form}>;
            <{media/width}>;
            <{media/height}></td>
        <td>{{HTMLObjectElement}}</td>
@@ -1201,6 +1200,18 @@
        <td><a>phrasing</a></td>
        <td><a>phrasing</a></td>
        <td><a>globals</a></td>
+       <td>{{HTMLElement}}</td>
+      </tr>
+
+      <tr>
+       <th><{slot}></th>
+       <td>Shadow root slot</td>
+       <td><a>flow</a>;
+           <a>phrasing</a></td>
+       <td><a>phrasing</a></td>
+       <td><a>transparent</a></td>
+       <td><a>globals</a>;
+       <{slot/name}></td>
        <td>{{HTMLElement}}</td>
       </tr>
 

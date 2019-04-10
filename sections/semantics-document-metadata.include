@@ -97,8 +97,8 @@
 
   <p class="note">
     The <{title}> element is a required child in most situations, but when a higher-level
-    protocol provides title information, e.g., in the Subject line of an e-mail when HTML is used as
-    an e-mail authoring format, the <{title}> element can be omitted.
+    protocol provides title information, e.g., in the Subject line of an e-mail when HTML is
+    used as an e-mail authoring format, the <{title}> element can be omitted.
   </p>
 
   <!-- W3C START - DO NOT OVERWRITE-->
@@ -137,16 +137,17 @@
   </dl>
 
   The <{title}> element <a>represents</a> the document's title or name. Authors should use
-  titles that identify their documents even when they are used out of context, for example in a
-  user's history or bookmarks, or in search results. The document's title is often different from
-  its first heading, since the first heading does not have to stand alone when taken out of context.
+  titles that identify their documents even when they are used out of context, for example in
+  a user's history or bookmarks, or in search results. The document's title is often different
+  from its first heading, since the first heading does not have to stand alone when taken out
+  of context.
 
   There must be no more than one <{title}> element per document.
 
   <p class="note">
-    If it's reasonable for the {{Document}} to have no title, then the <{title}>
-    element is probably not required. See the <{head}> element's content model for a
-    description of when the element is required.
+    If it's reasonable for the {{Document}} to have no title, then the <{title}> element is
+    probably not required. See the <{head}> element's content model for a description of when
+    the element is required.
   </p>
 
   <dl class="domintro">
@@ -159,8 +160,8 @@
   </dl>
 
     The IDL attribute <dfn attribute for="HTMLTitleElement"><code>text</code></dfn> must return the
-    <a>child text content</a> of the <{title}> element. On
-    setting, it must act the same way as the {{Node/textContent}} IDL attribute.
+    <a>child text content</a> of the <{title}> element. On setting, it must act the same way as
+    the {{Node/textContent}} IDL attribute.
 
   <div class="example">
     Here are some examples of appropriate titles, contrasted with the top-level headings that
@@ -170,8 +171,9 @@
       <title>Introduction to The Mating Rituals of Bees</title>
       ...
       <h1>Introduction</h1>
-      <p>This companion guide to the highly successful
-      <cite>Introduction to Medieval Bee-Keeping</cite> book is...
+      <p>
+        This companion guide to the highly successful
+        <cite>Introduction to Medieval Bee-Keeping</cite> book is...
     </xmp>
 
     The next page might be a part of the same site. Note how the title describes the subject matter
@@ -226,10 +228,10 @@
     </dd>
   </dl>
 
-  The <{base}> element allows authors to specify the <a>document base URL</a> for the
-  purposes of [[#parsing-urls]], and the name of the default <a>browsing context</a>
-  for the purposes of <a>following hyperlinks</a>. The element does not <a>represent</a> any content
-  beyond this information.
+  The <{base}> element allows authors to specify the <a>document base URL</a> for the purposes of
+  [[#parsing-urls]], and the name of the default <a>browsing context</a> for the purposes of
+  <a>following hyperlinks</a>. The element does not <a>represent</a> any content beyond this
+  information.
 
   There must be no more than one <{base}> element per document.
 
@@ -240,32 +242,31 @@
   contain a <a>valid URL potentially surrounded by spaces</a>.
 
   A <{base}> element, if it has an <{base/href}> attribute, must come before any other elements in
-  the tree that have attributes defined as taking <a for="url">URLs</a>, except the <{html}> element
-  (its <{html/manifest}> attribute isn't affected by <{base}> elements).
+  the tree that have attributes defined as taking <a for="url">URLs</a>, except the <{html}>
+  element (its <{html/manifest}> attribute isn't affected by <{base}> elements).
 
-    <p class="note">
-      If there are multiple <{base}> elements with <{base/href}> attributes, all but
-      the first are ignored.
-    </p>
+  <p class="note">
+    If there are multiple <{base}> elements with <{base/href}> attributes, all but
+    the first are ignored.
+  </p>
 
-  The <dfn element-attr for="base"><code>target</code></dfn> attribute, if specified, must contain a <a>valid browsing
-  context name or keyword</a>, which specifies which <a>browsing context</a> is to be used as the
-  default when <a>hyperlinks</a> and <a>forms</a> in the {{Document}} cause
+  The <dfn element-attr for="base"><code>target</code></dfn> attribute, if specified, must contain
+  a <a>valid browsing context name or keyword</a>, which specifies which <a>browsing context</a>
+  is to be used as the default when <a>hyperlinks</a> and <a>forms</a> in the {{Document}} cause
   <a>navigation</a>.
 
   A <{base}> element, if it has a <code>target</code> attribute, must come before any
   elements in the tree that represent <a>hyperlinks</a>.
 
-    <p class="note">
-      If there are multiple <{base}> elements with <code>target</code> attributes, all but
-      the first are ignored.
-    </p>
+  <p class="note">
+    If there are multiple <{base}> elements with <code>target</code> attributes, all but
+    the first are ignored.
+  </p>
 
-    A <{base}> element that is the first <{base}> element with an
-    <{base/href}> content attribute <a>in a document tree</a> has a
-    <dfn>frozen base URL</dfn>. The <a>frozen base URL</a> must be <a>immediately</a>
-    <a lt="set the frozen base URL">set</a> for an element whenever any of the following situations
-    occur:
+  A <{base}> element that is the first <{base}> element with an <{base/href}> content attribute
+  <a>in a document tree</a> has a <dfn>frozen base URL</dfn>. The <a>frozen base URL</a> must be
+  <a>immediately</a> <a lt="set the frozen base URL">set</a> for an element whenever any of
+  the following situations occur:
 
     * The <{base}> element becomes the first <{base}> element in <a>tree order</a>
         with an <{base/href}> content attribute in its {{Document}}.
@@ -289,8 +290,8 @@
     return the result of running the following algorithm:
 
     1. Let <var>document</var> be <var>element</var>'s <a>node document</a>.
-    2. Let <var>url</var> be the value of the <{base/href}> attribute of the <{base}> element, if it
-        has one, and the empty string otherwise.
+    2. Let <var>url</var> be the value of the <{base/href}> attribute of the <{base}> element,
+        if it has one, and the empty string otherwise.
     3. Let <var>urlRecord</var> be the result of <a>parsing</a> <var>url</var> with
         <var>document</var>'s <a>fallback base url</a>, and <var>document</var>'s
         <a>character encoding</a>. (Thus, the <{base}> element isn't affected by other <{base}>
@@ -341,16 +342,18 @@
     <dd>No <a>end tag</a>.</dd>
     <dt><a>Content attributes</a>:</dt>
     <dd><a>Global attributes</a></dd>
-    <dd><code>href</code> — Address of the <a>hyperlink</a></dd>
-    <dd><code>crossorigin</code> — How the element handles crossorigin requests</dd>
+    <dd><{link/href}> — Address of the <a>hyperlink</a></dd>
+    <dd><{link/crossorigin}> — How the element handles crossorigin requests</dd>
     <dd><{link/rel}> — Relationship of this document (or subsection/topic) to the destination resource</dd>
     <dd><{link/rev}> — <a>Reverse link</a> relationship of the destination resource to this document (or subsection/topic)</dd>
-    <dd><code>media</code> — Applicable media</dd>
-    <dd><code>hreflang</code> — Language of the linked resource</dd>
-    <dd><code>type</code> — Hint for the type of the referenced resource</dd>
-    <dd><code>referrerpolicy</code> - <a>Referrer policy</a> for <a>fetches</a> initiated by the element</dd>
-    <dd><code>sizes</code> — Sizes of the icons (for <{link/rel}>="<code>icon</code>")</dd>
-    <dd><code>as</code> — Destination for a preload request (for <{link/rel}>="<code>preload</code>")</dd>
+    <dd><{link/media}> — Applicable media</dd>
+    <dd><{link/hreflang}> — Language of the linked resource</dd>
+    <dd><{link/integrity}> — Metadata used in Subresource Integrity checks</dd>
+    <dd><{links/ping}> — URLs of the resources that are interested in being notified</dd>
+    <dd><{link/type}> — Hint for the type of the referenced resource</dd>
+    <dd><{link/referrerpolicy}> - <a>Referrer policy</a> for <a>fetches</a> initiated by the element</dd>
+    <dd><{link/sizes}> — Sizes of the icons (for <{link/rel}>="<code>icon</code>")</dd>
+    <dd><{link/as}> — Destination for a preload request (for <{link/rel}>="<code>preload</code>")</dd>
     <dd>
       Also, the <{link/title}> attribute has special semantics on this element: Title of the
       link; alternative style sheet set name.
@@ -403,21 +406,8 @@
 
   <{link/rel}>'s [=supported tokens=] are the keywords defined in [=HTML link types=] which are
   allowed to be used with <{link}> elements, impact the processing model, and are supported by
-  the user agent. The possible [=supported tokens=] are
-  <{link/alternate}>,
-  <code>dns-prefetch</code>,
-  <{link/icon}>,
-  <{link/next}>,
-  <code data-x="rel-pingback">pingback</code>,
-  <code data-x="rel-preconnect">preconnect</code>,
-  <code data-x="rel-prefetch">prefetch</code>,
-  <code data-x="rel-preload">preload</code>,
-  <code data-x="rel-prerender">prerender</code>,
-  <{link/search}>,
-  <code data-x="rel-serviceworker">serviceworker</code>, and
-  <{link/stylesheet}>.
-  A <{link/rel}>'s [=supported tokens=] must only include the tokens (keywords) from this list
-  that the user agent implements the processing model for.
+  the user agent. A <{link/rel}> must only include the tokens (keywords) outlined in the
+  table of [=supported tokens=] that the user agent implements the processing model for.
 
   If a <{link}> element has a <{link/rel}> attribute that contains only keywords that are
   <a>body-ok</a>, then the element is said to be <dfn>allowed in the body</dfn>. This means
@@ -499,11 +489,11 @@
 
   The <dfn element-attr for="link"><code>sizes</code></dfn> attribute gives the sizes of icons
   for visual media. Its value, if present, is merely advisory. User agents may use the value to
-  decide which icon(s) to use if multiple icons are available. If specified, the attribute must have
-  a value that is an [=unordered set of unique space-separated tokens=] which are
-  [=ASCII case-insensitive=]. Each value must be either an [=ASCII case-insensitive=] match for the
-  string "<code>any</code>", or a value that consists of two [=valid non-negative integers=] that do
-  not have a leading U+0030 DIGIT ZERO (0) character and that are separated by a single
+  decide which icon(s) to use if multiple icons are available. If specified, the attribute must
+  have a value that is an [=unordered set of unique space-separated tokens=] which are
+  [=ASCII case-insensitive=]. Each value must be either an [=ASCII case-insensitive=] match for
+  the string "<code>any</code>", or a value that consists of two [=valid non-negative integers=]
+  that do not have a leading U+0030 DIGIT ZERO (0) character and that are separated by a single
   U+0078 LATIN SMALL LETTER X or U+0058 LATIN CAPITAL LETTER X character. The attribute must not be
   specified on <{link}> elements that do not have a <{link/rel}> attribute that specifies the
   <{link/icon}> keyword or the <code>apple-touch-icon</code> keyword.
@@ -549,7 +539,7 @@
   each must <a>reflect</a> the respective content attributes of the same name.
 
   The <dfn attribute for="HTMLLinkElement"><code>crossOrigin</code></dfn> IDL attribute must
-  <a>reflect</a> the <{link/crossorigin}> content attribute.
+  <a>reflect</a> the <{link/crossorigin}> content attribute, limited to only known values.
 
   <!-- def {{HTMLLinkElement/referrerPolicy}} -->
 
@@ -664,8 +654,8 @@
       <var>url</var>, the empty string, and <var>corsAttributeState</var>.
   5. Set <var>request</var>'s <a>client</a> to the <{link}> element's <a>node document</a>'s
       {{Window}} object's <a>environment settings object</a>.
-  6. Set <var>request</var>'s <a>cryptographic nonce metadata</a> to the 
-    current value of the <{link}> element's 
+  6. Set <var>request</var>'s <a>cryptographic nonce metadata</a> to the
+    current value of the <{link}> element's
     <a href="#cryptographicnonce">[[<span>CryptographicNonce</span>]]</a> internal slot.
   7. Set <var>request</var>'s <a>integrity metadata</a> to the current value of
      the <{link}> element's <{link/integrity}> content attribute.
@@ -782,8 +772,8 @@
     </dd>
     <dd>
       If the <code>http-equiv</code> attribute is present but not in the
-      <a state for="http-equiv">encoding declaration state</a>: in a <{noscript}> element that is a child of a
-      <{head}> element.
+      <a state for="http-equiv">encoding declaration state</a>: in a <{noscript}> element that is
+      a child of a <{head}> element.
     </dd>
     <dd>
       If the <code>name</code> attribute is present: where <a>metadata content</a> is expected.
@@ -814,29 +804,30 @@
     </dd>
   </dl>
 
-  The <{meta}> element <a>represents</a> various kinds of metadata that cannot be
-  expressed using the <{title}>, <{base}>, <{link}>, <{style}>,
-  and <{script}> elements.
+  The <{meta}> element <a>represents</a> various kinds of metadata that cannot be expressed using
+  the <{title}>, <{base}>, <{link}>, <{style}>, and <{script}> elements.
 
   The <{meta}> element can represent document-level metadata with the <code>name</code>
-  attribute, pragma directives with the <dfn element-attr for="meta"><code>http-equiv</code></dfn> attribute, and the file's
-  <a>character encoding declaration</a> when an HTML document is serialized to string form (e.g., for
-  transmission over the network or for disk storage) with the <code>charset</code> attribute.
+  attribute, pragma directives with the <dfn element-attr for="meta"><code>http-equiv</code></dfn>
+  attribute, and the file's <a>character encoding declaration</a> when an HTML document is
+  serialized to string form (e.g., for transmission over the network or for disk storage) with
+  the <code>charset</code> attribute.
 
   Exactly one of the <code>name</code>, <code>http-equiv</code>, and <code>charset</code>
   attributes must be specified.
 
-  If either <code>name</code> or <code>http-equiv</code> is
-  specified, then the <code>content</code> attribute must also be
-  specified. Otherwise, it must be omitted.
+  If either <code>name</code> or <code>http-equiv</code> is specified, then the
+  <code>content</code> attribute must also be specified. Otherwise, it must be omitted.
 
   The <dfn element-attr for="meta"><code>charset</code></dfn> attribute specifies the character
   encoding used by the document. This is a <a>character encoding declaration</a>. If the
   attribute is present in an <a>XML document</a>, its value must be an
   <a>ASCII case-insensitive</a> match for the string "<code>utf-8</code>".
 
-  <p class="note">The <code>charset</code> attribute on the <{meta}> element has no effect in XML
-  documents. It is allowed in order to facilitate migration to and from XHTML.</p>
+  <p class="note">
+    The <code>charset</code> attribute on the <{meta}> element has no effect in XML
+    documents. It is allowed in order to facilitate migration to and from XHTML.
+  </p>
 
   There must not be more than one <{meta}> element with a <code>charset</code> attribute
   per document.
@@ -847,45 +838,47 @@
 
   <div class="warning">
 
-  <p><a href="https://www.w3.org/TR/css-device-adapt-1/#viewport-meta"><code>&lt;meta name="viewport" content="..."></code></a>
-  allows authors to define specific viewport characteristics (such as the layout viewport's width and zoom factor)
-  for their documents. Among these is the ability to prevent or restrict users from being able to zoom, using
-  <code>content</code> values such as <code>user-scalable="no"</code> or <code>maximum-scale=1.0</code>. Authors should not suppress
-  or limit the ability of users to resize a document, as this causes accessibility and usability issues.</p>
+    <a href="https://www.w3.org/TR/css-device-adapt-1/#viewport-meta"><code>&lt;meta name="viewport" content="..."></code></a>
+    allows authors to define specific viewport characteristics (such as the layout viewport's width
+    and zoom factor) for their documents. Among these is the ability to prevent or restrict users
+    from being able to zoom, using <code>content</code> values such as
+    <code>user-scalable="no"</code> or <code>maximum-scale=1.0</code>. Authors should not suppress
+    or limit the ability of users to resize a document, as this causes accessibility and usability
+    issues.
 
-  <div class="example">
-  The following examples illustrate code that should be avoided:
-  <pre highlight="html" class="bad">
-    &lt;!-- DO NOT DO THIS -->
+    <div class="example">
+      The following examples illustrate code that should be avoided:
 
-    &lt;meta name="viewport" content="<mark>user-scalable="no"</mark>">
+      <pre highlight="html" class="bad">
+        &lt;!-- DO NOT DO THIS -->
+        &lt;meta name="viewport" content=<mark>user-scalable="no"</mark>>
 
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, <mark>maximum-scale=1.0</mark>">
-  </pre>
-  </div>
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, <mark>maximum-scale=1.0</mark>">
+      </pre>
+    </div>
 
-  <p>There may be specific use cases where preventing users from zooming may be appropriate, such as map applications –
-  where custom zoom functionality is handled via scripting.
-  However, in general this practice should be avoided, and HTML conformance checking tools should display a warning if
-  they encounter these values.</p>
+    There may be specific use cases where preventing users from zooming may be appropriate,
+    such as map applications – where custom zoom functionality is handled via scripting.
+    However, in general this practice should be avoided, and HTML conformance checking tools should
+    display a warning if they encounter these values.
 
-  <p>Note that most user agents now allow users to always zoom, regardless of any
-  <code>&lt;meta name="viewport" content="..."></code> restrictions – either by default, or as a setting/option (which may however not be immediately apparent to users).</p>
+    Note that most user agents now allow users to always zoom, regardless of any
+    <code>&lt;meta name="viewport" content="..."></code> restrictions – either by default, or as a setting/option (which may however not be immediately apparent to users).
   </div>
 
   If a <{meta}> element has a <dfn element-attr for="meta"><code>name</code></dfn>
-  attribute, it sets document metadata. Document metadata is expressed in terms of name-value pairs,
-  the <code>name</code> attribute on the <{meta}> element giving the
-  name, and the <code>content</code> attribute on the same element giving
-  the value. The name specifies what aspect of metadata is being set; valid names and the meaning of
-  their values are described in the following sections. If a <{meta}> element has no
-  <code>content</code> attribute, then the value part of the metadata name-value pair is the empty
-  string.
+  attribute, it sets document metadata. Document metadata is expressed in terms of name-value
+  pairs, the <code>name</code> attribute on the <{meta}> element giving the name, and the
+  <code>content</code> attribute on the same element giving the value. The name specifies what
+  aspect of metadata is being set; valid names and the meaning of their values are described in
+  the following sections. If a <{meta}> element has no <code>content</code> attribute, then the
+  value part of the metadata name-value pair is the empty string.
 
-  The <dfn attribute for="HTMLMetaElement"><code>name</code></dfn> and <dfn attribute for="HTMLMetaElement"><code>content</code></dfn> IDL attributes must
+  The <dfn attribute for="HTMLMetaElement"><code>name</code></dfn> and
+  <dfn attribute for="HTMLMetaElement"><code>content</code></dfn> IDL attributes must
   <a>reflect</a> the respective content attributes of the same name. The IDL attribute
-  <dfn attribute for="HTMLMetaElement"><code>httpEquiv</code></dfn> must <a>reflect</a> the content attribute
-  <{meta/http-equiv}>.
+  <dfn attribute for="HTMLMetaElement"><code>httpEquiv</code></dfn> must <a>reflect</a>
+  the content attribute <{meta/http-equiv}>.
 
 <h5 id="standard-metadata-names">Standard metadata names</h5>
 
@@ -895,19 +888,17 @@
   Names are case-insensitive, and must be compared in an <a>ASCII case-insensitive</a> manner.
 
   : <dfn><code>application-name</code></dfn>
-  :: The value must be a short free-form string giving the name of the Web application that the page
-      represents. If the page is not a Web application, the <code>application-name</code> metadata
-      name must not be used. Translations of the Web application's name may be given, using the
-      <{global/lang}> attribute to specify the language of each name.
+  :: The value must be a short free-form string giving the name of the Web application that the
+      page represents. If the page is not a Web application, the <code>application-name</code>
+      metadata name must not be used. Translations of the Web application's name may be given,
+      using the <{global/lang}> attribute to specify the language of each name.
 
-      There must not be more than one <{meta}> element with a given <a>language</a> and
-      with its <code>name</code> attribute set to the value <code>application-name</code> per
-      document.
+      There must not be more than one <{meta}> element with a given <a>language</a> and with its
+      <code>name</code> attribute set to the value <code>application-name</code> per document.
 
-        User agents may use the application name in UI in preference to the page's
-        <{title}>, since the title might include status messages and the like relevant to
-        the status of the page at a particular moment in time instead of just being the name of the
-        application.
+        User agents may use the application name in UI in preference to the page's <{title}>,
+        since the title might include status messages and the like relevant to the status of the
+        page at a particular moment in time instead of just being the name of the application.
 
         To find the application name to use given an ordered list of languages (e.g., British
         English, American English, and English), user agents must run the following steps:
@@ -939,8 +930,8 @@
   :: The value must be a free-form string giving the name of one of the page's authors.
 
   : <dfn><code>description</code></dfn>
-  :: The value must be a free-form string that describes the page. The value must be appropriate for
-      use in a directory of pages, e.g., in a search engine or list of bookmarks.
+  :: The value must be a free-form string that describes the page. The value must be appropriate
+      for use in a directory of pages, e.g., in a search engine or list of bookmarks.
 
   : <dfn><code>generator</code></dfn>
   :: The value must be a free-form string that identifies one of the software packages used to
@@ -990,8 +981,8 @@
             1. <a lt="split a string on commas">Split the value of the element's <code>content</code> attribute on commas</a>.
             2. Add the resulting tokens, if any, to <var>keywords</var>.
         3. Remove any duplicates from <var>keywords</var>.
-        4. Return <var>keywords</var>. This is the list of keywords that the author has specified as
-            applicable to the page.
+        4. Return <var>keywords</var>. This is the list of keywords that the author has specified
+            as applicable to the page.
 
         User agents should not use this information when there is insufficient confidence in the
         reliability of the value.
@@ -1010,26 +1001,27 @@
      <a>referrer policy</a> for the <code>Document</code>. [[!REFERRERPOLICY]]
 
      If any <code>meta</code> elements are <a>inserted into the document</a> or
-     <a>removed from the document</a>, or existing <code>meta</code> elements have their <code>name</code>
-     or <code>content</code> attributes changed, user agents must run the following algorithm:
+     <a>removed from the document</a>, or existing <code>meta</code> elements have their
+     <code>name</code> or <code>content</code> attributes changed, user agents must run the
+     following algorithm:
 
-     1. <p>Let <var>candidate elements</var> be the list of all <code>meta</code> elements that
-        meet the following criteria, in <a>tree order</a>:</p>
+     1. Let <var>candidate elements</var> be the list of all <code>meta</code> elements that
+        meet the following criteria, in <a>tree order</a>:
 
         <ul class="brief">
-         <li>The element is <a>in a document tree</a></li>
-         <li>The element has a <code>name</code> attribute, whose value is <code>referrer</code></li>
-         <li>The element has a <code>content</code> attribute, whose value is not the empty string</li>
-         <li>The element is a child of the <{head}> element of the document</li>
+          <li>The element is <a>in a document tree</a></li>
+          <li>The element has a <code>name</code> attribute, whose value is <code>referrer</code></li>
+          <li>The element has a <code>content</code> attribute, whose value is not the empty string</li>
+          <li>The element is a child of the <{head}> element of the document</li>
         </ul>
 
      2. For each <var>element</var> in <var>candidate elements</var>:
 
-         1. <p>Let <var>value</var> be the value of <var>element</var>'s <code>content</code> attribute,
-            converted to [=ASCII lowercase=].</p></li>
+         1. Let <var>value</var> be the value of <var>element</var>'s <code>content</code>
+            attribute, converted to [=ASCII lowercase=].
 
-         2. <p>If <var>value</var> is one of the values given in the first column of the following
-            table, then set <var>value</var> to the value given in the second column:</p>
+         2. If <var>value</var> is one of the values given in the first column of the following
+            table, then set <var>value</var> to the value given in the second column:
 
             <table>
              <thead>
@@ -1051,13 +1043,14 @@
                <td><code>origin-when-cross-origin</code>
             </table>
 
-          3. <p>If <var>value</var> is a <a>referrer policy</a>, then set <var>element</var>'s
-             <a>node document</a>'s <a>referrer policy</a> to <var>policy</var>.</p>
+          3. If <var>value</var> is a <a>referrer policy</a>, then set <var>element</var>'s
+             <a>node document</a>'s <a>referrer policy</a> to <var>policy</var>.
 
 
-      <p class="note">The fact that these steps are applied for each element enables <a
-      href="https://w3c.github.io/webappsec-referrer-policy/#unknown-policy-values">deployment of
-      fallback values for older user agents</a>. [[!REFERRERPOLICY]]</p>
+      <p class="note">
+        The fact that these steps are applied for each element enables
+        <a href="https://w3c.github.io/webappsec-referrer-policy/#unknown-policy-values">deployment of fallback values for older user agents</a>. [[!REFERRERPOLICY]]
+      </p>
 
      </div>
 
@@ -1084,26 +1077,26 @@
   : Synonyms
   :: A list of other names that have exactly the same processing requirements. Authors should not
       use the names defined to be synonyms, they are only intended to allow user agents to support
-      legacy content. Anyone may remove synonyms that are not used in practice; only names that need
-      to be processed as synonyms for compatibility with legacy content are to be registered in this
-      way.
+      legacy content. Anyone may remove synonyms that are not used in practice; only names that
+      need to be processed as synonyms for compatibility with legacy content are to be registered
+      in this way.
 
   : Status
   :: One of the following:
       : Proposed
-      :: The name has not received wide peer review and approval. Someone has proposed it and is, or
-          soon will be, using it.
+      :: The name has not received wide peer review and approval. Someone has proposed it and is,
+          or soon will be, using it.
 
       : Ratified
       :: The name has received wide peer review and approval. It has a specification that
-          unambiguously defines how to handle pages that use the name, including when they use it in
-          incorrect ways.
+          unambiguously defines how to handle pages that use the name, including when they use it
+          in incorrect ways.
 
       : Discontinued
       :: The metadata name has received wide peer review and it has been found wanting. Existing
-          pages are using this metadata name, but new pages should avoid it. The "brief description"
-          and "specification" entries will give details of what authors should use instead, if
-          anything.
+          pages are using this metadata name, but new pages should avoid it. The
+          "brief description" and "specification" entries will give details of what authors
+          should use instead, if anything.
 
       If a metadata name is found to be redundant with existing values, it should be removed and
       listed as a synonym for the existing value.
@@ -1111,36 +1104,36 @@
       If a metadata name is registered in the "proposed" state for a period of a month or more
       without being used or specified, then it may be removed from the registry.
 
-      If a metadata name is added with the "proposed" status and found to be redundant with existing
-      values, it should be removed and listed as a synonym for the existing value. If a metadata
-      name is added with the "proposed" status and found to be harmful, then it should be changed to
-      "discontinued" status.
+      If a metadata name is added with the "proposed" status and found to be redundant with
+      existing values, it should be removed and listed as a synonym for the existing value. If a
+      metadata name is added with the "proposed" status and found to be harmful, then it should be
+      changed to "discontinued" status.
 
       Anyone can change the status at any time, but should only do so in accordance with the
       definitions above.
 
     Conformance checkers may use the information given on the WHATWG Wiki MetaExtensions page to
     establish if a value is allowed or not: values defined in this specification or marked as
-    "proposed" or "ratified" must be accepted, whereas values marked as "discontinued" or not listed
-    in either this specification or on the aforementioned page must be reported as invalid.
+    "proposed" or "ratified" must be accepted, whereas values marked as "discontinued" or not
+    listed in either this specification or on the aforementioned page must be reported as invalid.
     Conformance checkers may cache this information (e.g., for performance reasons or to avoid the
     use of unreliable network connectivity).
 
     When an author uses a new metadata name not defined by either this specification or the Wiki
-    page, conformance checkers should offer to add the value to the Wiki, with the details described
-    above, with the "proposed" status.
+    page, conformance checkers should offer to add the value to the Wiki, with the details
+    described above, with the "proposed" status.
 
-  Metadata names whose values are to be <a for="url">URLs</a> must not be proposed or accepted. Links must be
-  represented using the <{link}> element, not the <{meta}> element.
+  Metadata names whose values are to be <a for="url">URLs</a> must not be proposed or accepted.
+  Links must be represented using the <{link}> element, not the <{meta}> element.
 
 <h5 id="pragma-directives">Pragma directives</h5>
 
   When the <dfn><code>http-equiv</code></dfn> attribute is specified on a <{meta}> element,
   the element is a pragma directive.
 
-  The <code>http-equiv</code> attribute is an <a>enumerated attribute</a>. The following table lists
-  the keywords defined for this attribute. The states given in the first cell of the rows with
-  keywords give the states to which those keywords map. Some of the keywords are
+  The <code>http-equiv</code> attribute is an <a>enumerated attribute</a>. The following table
+  lists the keywords defined for this attribute. The states given in the first cell of the rows
+  with keywords give the states to which those keywords map. Some of the keywords are
   non-conforming, as noted in the last column.
 
   <table id="table-http-equiv">
@@ -1173,9 +1166,14 @@
         <td></td>
       </tr>
       <tr>
-        <td><a state for="http-equiv" lt="set-cookie">Cookie setter</a></td>
+        <td><a state for="http-equiv" lt="set-cookie">Set-Cookie</a></td>
         <td><code>set-cookie</code></td>
         <td>Non-conforming</td>
+      </tr>
+      <tr>
+        <td><a state for="http-equiv" lt="content-security-policy">Content Security Policy</a></td>
+        <td><code>content-security-policy</code></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1368,18 +1366,11 @@
         <xmp highlight="html"><meta http-equiv="Refresh" content="20; URL=page4.html"></xmp>
       </div>
 
-    : <dfn state for="http-equiv" lt="set-cookie">Cookie setter</dfn> (<code>http-equiv="set-cookie"</code>)
-    :: This pragma sets an HTTP cookie. [[!COOKIES]]
+    : <dfn state for="http-equiv" lt="set-cookie">Set-Cookie state</dfn> (<code>http-equiv="set-cookie"</code>)
+    :: This pragma is non-conforming and has no effect.
+         <p>User agents are required to ignore this pragma.</p>
 
-        It is non-conforming. Real HTTP headers should be used instead.
-
-        1. If the <{meta}> element has no <code>content</code> attribute, or if that
-            attribute's value is the empty string, then abort these steps.
-        2. Act as if <a>receiving a set-cookie-string</a> for the document's [=Document/URL=] via a
-            "non-HTTP" API, consisting of the value of the element's <code>content</code> attribute
-            <a>encoded as UTF-8</a>. [[!COOKIES]] [[!ENCODING]]
-
-    : <dfn state for="http-equiv">Content security policy state</dfn> (<code>http-equiv="content-security-policy"</code>)
+    : <dfn state for="http-equiv" lt="content-security-policy">Content security policy state</dfn> (<code>http-equiv="content-security-policy"</code>)
     :: This pragma <a lt="enforced">enforces</a> a <a>Content Security Policy</a> on a {{Document}}.
         [[CSP3]]
 
@@ -1427,7 +1418,7 @@
   Regardless of whether a character encoding declaration is present or not, the actual character
   encoding used to encode the document must be <a>UTF-8</a>. [[!ENCODING]]
 
-  The following restrictions apply to [=character encoding declarations=]:
+  The following restrictions apply to all [=character encoding declarations=]:
 
   * The character encoding declaration must be serialized without the use of
       <a>character references</a> or character escapes of any kind.
@@ -1435,6 +1426,10 @@
       within <dfn>the first 1024 bytes</dfn> of the document.
   * Due to a number of restrictions on <{meta}> elements, there can only be one
       <code>meta</code>-based character encoding declaration per document.
+
+  For legacy documents, the character encoding name given must be an <a>ASCII case-insensitive</a>
+  match for one of the <a lt="character encoding">labels</a> of the <a>character encoding</a> used
+  to serialize the file. [[!ENCODING]]
 
   Authoring tools must default to using <a>UTF-8</a> for newly-created documents. [[!ENCODING]]
 
@@ -1469,8 +1464,8 @@
   necessary.
 
   <div class="example">
-    In HTML, to declare that the character encoding is UTF-8, the author could include the following
-    markup near the top of the document (in the <{head}> element):
+    In HTML, to declare that the character encoding is UTF-8, the author could include the
+    following markup near the top of the document (in the <{head}> element):
 
     <xmp highlight="html"><meta charset="utf-8"></xmp>
 
@@ -1483,20 +1478,20 @@
 
   <dl class="element">
     <dt><a>Categories</a>:</dt>
+    <dd><a>Flow content</a>.</dd>
     <dd><a>Metadata content</a>.</dd>
     <dt><a>Contexts in which this element can be used</a>:</dt>
     <dd>
       Where <a>metadata content</a> is expected.
     </dd>
     <dd>
-      In a <{noscript}> element that is a
-      child of a <{head}> element.
+      In a <{noscript}> element that is a child of a <{head}> element.
     </dd>
     <dd>In the body, where <a>flow content</a> is expected.</dd>
     <dt><a>Content model</a>:</dt>
     <dd>
-      Depends on the value of the <code>type</code> attribute, but must match requirements described
-      in prose below.
+      Depends on the value of the <code>type</code> attribute, but must match requirements
+      described in prose below.
     </dd>
     <dt><a>Tag omission in text/html</a>:</dt>
     <dd>Neither tag is omissible.</dd>
@@ -1703,8 +1698,8 @@
   <h4 id="interactions-of-styling-and-scripting">Interactions of styling and scripting</h4>
 
   Style sheets, whether added by a <{link}> element, a <{style}> element, an
-  <code>&lt;?xml-stylesheet?&gt;</code> PI, an HTTP <code>Link</code> header, or some other
-  mechanism, have a <dfn>style sheet ready</dfn> flag, which is initially unset.
+  <code>&lt;?xml-stylesheet?&gt;</code> Processing Instruction, an HTTP <code>Link</code> header,
+  or some other mechanism, have a <dfn>style sheet ready</dfn> flag, which is initially unset.
 
   When a style sheet is ready to be applied, its <a>style sheet ready</a> flag must be set. If the
   style sheet referenced no other resources (e.g., it was an internal style sheet given by a
@@ -1713,14 +1708,22 @@
   available to script once the <a>event loop</a> reaches its <i>update the rendering</i> step.
 
   A style sheet in the context of the {{Document}} of an <a>HTML parser</a> or <a>XML parser</a> is
-  said to be <dfn>a style sheet that is blocking scripts</dfn> if the element was created by that
-  {{Document}}'s parser, and the element is either a <{style}> element or a <{link}> element that
-  was an <a href="#link-type-stylesheet">external resource link</a> when the element was created by
-  the parser, and the element's style sheet was enabled when the element was created by the parser,
-  and the element's <a>style sheet ready</a> flag is not yet set, and, the last time the
-  <a>event loop</a> reached step 1, the element was in that {{Document}}, and the user
-  agent hasn't given up on that particular style sheet yet. A user agent may give up on a style
-  sheet at any time.
+  said to be <dfn>a style sheet that is blocking scripts</dfn> if the  the style sheet was added
+  by either
+
+    * a <{style}> element created by that {{Document}}'s parser, or
+    * a <{link}> element whose <{link/media}> attribute <a>matches the environment</a> that
+        was created by that {{Document}}'s parser as an
+        <a href="#link-type-stylesheet">external resource link</a>
+
+  and the following conditions are all true:
+
+  * the element's style sheet was enabled when the element was created by the parser,
+  * the element's <a>style sheet ready</a> flag is not yet set,
+  * the last time the <a data-lt="event loops processing model">event loop reached step 1</a>, the element was in that {{Document}}, and
+  * the user agent hasn't given up on that particular style sheet yet.
+
+  A user agent may give up on a style sheet at any time.
 
   <p class="note">
     Giving up on a style sheet before the style sheet loads, if the style sheet eventually does
@@ -1733,13 +1736,14 @@
     of doing nothing while waiting for a slow network request to finish.
   </p>
 
-  A {{Document}} <dfn lt="have a style sheet that is blocking scripts|has a style sheet that is blocking scripts">has a style sheet that is blocking scripts</dfn> if there is either
-  <a>a style sheet that is blocking scripts</a> in the context of that {{Document}}, or
-  if that {{Document}} is in a <a>browsing context</a> that has a
-  <a>parent browsing context</a>, and the <a>active document</a> of that
-  <a>parent browsing context</a> itself <a>has a style sheet that is blocking scripts</a>.
+  A {{Document}} <dfn lt="have a style sheet that is blocking scripts|has a style sheet that is blocking scripts">has a style sheet that is blocking scripts</dfn> if that {{Document}} either
 
-  A {{Document}} <dfn>has no style sheet that is blocking scripts</dfn> if it does not
-  <a>have a style sheet that is blocking scripts</a> as defined in the previous paragraph.
+  * has in its context <a>a style sheet that is blocking scripts</a>, or
+  * it is in a <a>browsing context</a> that has a <a>parent browsing context</a>,
+      and the <a>active document</a> of that <a>parent browsing context</a>
+      <a>has a style sheet that is blocking scripts</a>.
+
+  If neither of these conditions are true for a {{Document}} then it
+  <dfn>has no style sheet that is blocking scripts</dfn>.
 
 </section>

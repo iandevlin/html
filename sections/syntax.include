@@ -760,7 +760,7 @@
     <xmp highlight="html">
       <pre>Hello</pre>
     </xmp>
-    
+
     <xmp highlight="html">
       <pre>
       Hello</pre>
@@ -818,10 +818,17 @@
       representing a hexadecimal integer that corresponds to a Unicode code point that is allowed
       according to the definition below. The digits must then be followed by a U+003B SEMICOLON
       character (;).
-
+  
   The numeric character reference forms described above are allowed to reference any Unicode code
-  point other than U+0000, U+000D, permanently undefined Unicode characters (noncharacters),
-  surrogates (U+D800—U+DFFF), and [=control characters=] other than [=space characters=].
+  point but not:
+
+  * permanently undefined Unicode characters (noncharacters)
+  * surrogates (U+D800—U+DFFF)
+  * control codes (U+0000—U+001F and U+007F—U+009F), with the exception of the following numeric
+    character references which are allowed:
+    * `&#x9;` or `&#9;`  - representing U+0009 CHARACTER TABULATION (␉)
+    * `&#xA;` or `&#10;` - representing U+000A LINE FEED (␊)
+    * `&#xC;` or `&#12;` - representing U+000C FORM FEED (␌)
 
   An <dfn>ambiguous ampersand</dfn> is a U+0026 AMPERSAND character (&amp;) that is followed by one
   or more [=alphanumeric ASCII characters=], followed by a U+003B SEMICOLON character (;), where
@@ -2195,7 +2202,7 @@
     :: [=Reconsume=] in the [=script data state=].
   </dl>
 
-#### <dfn id="tokenizer-script-data-escapse-start-dash-state">Script data escape start dash state</dfn> #### {#script-data-escape-start-dash-state}
+#### <dfn id="tokenizer-script-data-escape-start-dash-state">Script data escape start dash state</dfn> #### {#script-data-escape-start-dash-state}
 
   Consume the [=next input character=]:
 
@@ -3477,11 +3484,11 @@
         <div class="example">
           If the markup contains (not in an attribute) the string `I'm &notit; I tell you`, the
           character reference is parsed as "not", as in, `I'm ¬it; I tell you` (and this is a parse
-          error). But if the markup was `I'm &amp;notin; I tell you`, the character reference would
+          error). But if the markup was `I'm &notin; I tell you`, the character reference would
           be parsed as "notin;", resulting in `I'm ∉ I tell you` (and no parse error).
 
           However, if the markup contains the string `I'm &amp;notit; I tell you` in an attribute,
-          no character reference is parsed and string remains intact (and there is no parse error).
+          there is no parse error and the string `I'm &notit; I tell you` is the result of parsing.
         </div>
   </dl>
 
@@ -3542,7 +3549,7 @@
 
     : [=Lowercase ASCII hex digit=]
     :: Multiply the [=character reference code=] by 16. Add a numeric version of the
-        [=current input character=] as a hexademical digit (subtract 0x0057 from the character's
+        [=current input character=] as a hexadecimal digit (subtract 0x0057 from the character's
         code point) to the [=character reference code=].
 
     : U+003B SEMICOLON character (;)
@@ -3779,7 +3786,7 @@
   ---
 
   When the steps below require the UA to
-  <dfn lt="create an element for the token">create an element for a token</dfn> in a particular
+  <dfn lt="create an element for the token|create an element for a token">create an element for a token</dfn> in a particular
   |given namespace| and with a particular |intended parent|, the UA must run the following steps:
 
   1. Let |document| be |intended parent|'s [=node document=].
@@ -3804,6 +3811,13 @@
       is true. However, since we incremented the [=throw-on-dynamic-markup-insertion counter=], this
       cannot cause {{Document/write()|new characters to be inserted into the tokenizer}}, or
       {{Document/open()|the document to be blown away}}.</p>
+
+      If this step throws an exception, then <a>report the exception</a>,
+      and let <var>element</var> be instead a new element that implements {{HTMLUnknownElement}},
+      with no attributes, namespace set to <var>given namespace</var>, namespace prefix set to null,
+      <a>custom element state</a> set to "<code>failed</code>", <a>custom element definition</a>
+      set to null, and <a>node document</a> set to <var>document</var>.
+      
   8. [=Append=] each attribute in the given token to |element|.
 
       <p class="note">This can [=enqueue a custom element callback reaction=] for the
@@ -5059,10 +5073,10 @@
 
         [=Insert an HTML element=] for the token.
 
-    : A start tag whose tag name is one of: "rb", "rtc"
+    : A start tag whose tag name is: "rb"
     :: If the [=stack of open elements=] <a lt="in scope">has a `ruby` element in scope</a>, then
-        [=generate implied end tags=]. If the [=current node=] is not now a <{ruby}> element, this
-        is a [=parse error=].
+        [=generate implied end tags=]. If the [=current node=] is not now a <{ruby}> element nor
+        a child of a <{ruby}> element, this is a [=parse error=].
 
         [=Insert an HTML element=] for the token.
 
@@ -5070,6 +5084,12 @@
     :: If the [=stack of open elements=] <a lt="in scope">has a `ruby` element in scope</a>, then
         [=generate implied end tags=], except for <{rtc}> elements. If the [=current node=] is not
         now a <{rtc}> element or a <{ruby}> element, this is a [=parse error=].
+
+        [=Insert an HTML element=] for the token.
+
+    : A start tag whose tag name is: "rtc"
+    :: If the [=stack of open elements=] <a lt="in scope">has a `ruby` element in scope</a>, then
+        [=generate implied end tags=]. If the [=current node=] is not now a <{ruby}> element, this is a [=parse error=].
 
         [=Insert an HTML element=] for the token.
 
